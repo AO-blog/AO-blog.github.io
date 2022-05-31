@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 归宅部</title>
+    <link>https://ao2233.xyz/tags/linux/</link>
+    <description>Recent content in linux on 归宅部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>AO</copyright>
+    <lastBuildDate>Wed, 05 Jan 2022 19:52:31 +0800</lastBuildDate><atom:link href="https://ao2233.xyz/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Arch Linux 配置</title>
+      <link>https://ao2233.xyz/posts/arch/</link>
+      <pubDate>Wed, 05 Jan 2022 19:52:31 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/posts/arch/</guid>
+      <description>arch的优势  内核最新，有助于解决各种硬件适配问题 不用自己打包，手动编译，比如mpv-full的vapoursynth模块依赖，或 cuda or cudnn 等等 安装包的速度快，全方面定制 各发行版中最方便的，就长期使用而言应该是最省心的  可能的问题  稳定性待考查，只能最新包，可能产生兼容问题 安装对比图形界面而言还是较为繁琐（但是此时间与手动编译ffmpeg-full的时间相比，不值一提） 如果只是编译机或者服务器，建议ubuntu或者debian 不管如何兼容软件不如Windows，无论是gnome还是KDE，均存在大量bug，xorg老牛拉破车 systemed滚挂了  USB的准备 建议使用ventoy
+下载arch的镜像
+安装  联网 &amp;amp; 镜像设置
+ 1iwctl 2device list 3station wlan0 scan 4station wlan0 get-networks 5station wlan0 connect wifi_name 6# 仅仅支持非特殊字符的wifi 7vim /etc/pacman.d/mirrorlist 8# Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch 9# Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch 10pacman -Syy  分区
+ 1# nvme固态通常叫nvme，其余通常叫sda。看总线接口。 2cfdisk /dev/nvme0n1 3# 图形化分区 4mkfs.ext4 /dev/nvme0n1px 5# 仅仅单系统时使用，efi分区重建，但是这样建议直接arch_install脚本 6mkfs.fat -F 32 /dev/nvme0n1p1 7# 当然可以选择其他便于拓展的格式 8mount /dev/nvme0n1px /mnt 9#对16G以上的系统不建议swap硬分区，直接swap文件即可。设置大小&amp;gt;1xRAM。 10mkdir /mnt/efi 11mount /dev/nvme0n1p1 /mnt/efi # 把efi分区挂到efi下  安装</description>
+    </item>
+    
+    <item>
+      <title>Linux/ubuntu/debian 其他配置</title>
+      <link>https://ao2233.xyz/posts/ubuntu/</link>
+      <pubDate>Thu, 09 Dec 2021 21:13:06 +0000</pubDate>
+      
+      <guid>https://ao2233.xyz/posts/ubuntu/</guid>
+      <description>Grub
+ 1png 只能8位 2jpg 无所谓 3./install.sh 45sudo vim /etc/default/grub 6GRUB_THEME=&amp;#34;/usr/share/grub/themes/Tela/theme.txt&amp;#34; 7update-grub 89主题路径 10/usr/share/grub/themes/Tela 1112字体问题 13制作字体 14sudo grub-mkfont &amp;#39;/home/ao/下载/sarasa-ui-sc-regular.ttf&amp;#39; -o sarasa_22.pf2 -s 22 -v 15替换  16theme.txt 1718# Show a countdown message using the label component 19+ label { 20top = 82% 21left = 32% 22width = 30% 23align = &amp;#34;center&amp;#34; 24id = &amp;#34;__timeout__&amp;#34; 25text = &amp;#34;少女祈祷中... %d\n请选择...&amp;#34; 26color = &amp;#34;#cccccc&amp;#34; 27font = &amp;#34;Sarasa UI SC Regular 26&amp;#34; 28}  硬件监控</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta name="generator" content="Hugo 0.99.1" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+	<title>归宅部 | Home </title><link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico /><meta id="viewport" name="viewport">
+
+<script type="text/javascript">
+
+(function(){
+
+  function apply_viewport(){
+    
+
+      var ww = window.screen.width;
+      var mw = 680; 
+      var ratio =  ww / mw; 
+      var viewport_meta_tag = document.getElementById('viewport');
+      if( ww < mw){ 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', width=device-width');
+      }
+      else { 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, width=device-width');
+      }
+    
+  }
+
+  
+  window.addEventListener('resize', function(){
+    apply_viewport();
+  });
+
+  apply_viewport();
+
+}());
+</script>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	<script src="https://ao2233.xyz/js/feather.min.js"></script>
+	
+	
+	
+        <link href="https://ao2233.xyz/css/fonts.css" rel="stylesheet">
+	
+
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ao2233.xyz/css/main.9b8e8a799f6e2e28df142ec99e798c0b6f9ea416e05cd70d7d82c6ac53d3b1c3.css" />
+
+	
+	
+	
+	<link rel="stylesheet" href="https://ao2233.xyz/aplayer/APlayer.min.css" >
+	<script src="https://ao2233.xyz/aplayer/APlayer.min.js"></script>
+	<script src="https://ao2233.xyz/dplayer/DPlayer.min.js"></script>
+	<script src="https://ao2233.xyz/js/pdfobject.min.js"></script>
+
+	<link rel="stylesheet" href="https://ao2233.xyz/js/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://ao2233.xyz/js/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://ao2233.xyz/js/auto-render.min.js" crossorigin="anonymous"  onload="renderMathInElement(document.body);"></script>
+
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+				{left: "$$", right: "$$", display: true},
+				{left: "\\[", right: "\\]", display: true},
+				{left: "$", right: "$", display: false},
+				{left: "\\(", right: "\\)", display: false},
+				
+				
+				
+				
+				
+				]
+			});
+		});
+	</script>
+
+	<script src="https://ao2233.xyz/js/mermaid.min.js"></script>
+		
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://ao2233.xyz/css/dark.0c347dbf372552c4028878b51c7d5207c1cde76047704ef7935a61ac0a29e7d4.css"media="(prefers-color-scheme: dark)"  />
+		<script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		var config = {
+			startOnLoad:true,
+			flowchart:{
+			useMaxWidth:true,
+			htmlLabels:true,
+			curve:'cardinal',
+			},
+			securityLevel:'loose',
+		};
+		var a=0;
+		function darkModeHandler() {
+			if (mediaQuery.matches) {
+				mermaid.initialize({
+					
+					theme: 'dark',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('深色模式')
+			} else {
+				mermaid.initialize({
+					
+					theme: 'base',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('浅色模式')
+			}
+		}
+
+		
+		darkModeHandler()
+		
+		mediaQuery.addListener(darkModeHandler)
+
+		</script>
+		
+
+	
+</head>
+
+	<body>
+		<div class="content">
+			<header>
+	<div class="main">
+		<a href="https://ao2233.xyz/">归宅部</a>
+		<link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico />
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+			<main class="list">
+				<div class="site-description"><p>四月は君の嘘</p></div>
+				
+				
+				
+				
+				
+				<section class="list-item">
+					
+					<h1 class="title">Torch.autograd</a></h1>
+					<time>Jan 11, 2022 <span class="draft-label">DRAFT</span> </time> 
+					
+					<blockquote>
+<p>一般情况</p>
+</blockquote>
+<p>$$
+{\rm X}=\left[x_1,x_2,x_3,x_4\right]\\
+{\rm Y}=\left[y_1,y_2,y_3\right]\\
+y_1=f_1(x_1,x_2,x_3,x_4)\\
+y_2=f_2(x_1,x_2,x_3,x_4)\\
+y_3=f_3(x_1,x_2,x_3,x_4)\\
+J=\left(
+\begin{matrix}
+\frac{\partial y_1}{\partial x_1} &amp; \frac{\partial y_1}{\partial x_2} &amp; \frac{\partial y_1}{\partial x_3} &amp; \frac{\partial y_1}{\partial x_4}\\
+\frac{\partial y_2}{\partial x_1} &amp; \frac{\partial y_2}{\partial x_2} &amp; \frac{\partial y_2}{\partial x_3} &amp; \frac{\partial y_2}{\partial x_4}\\
+\frac{\partial y_3}{\partial x_1} &amp; \frac{\partial y_3}{\partial x_2} &amp; \frac{\partial y_3}{\partial x_3} &amp; \frac{\partial y_3}{\partial x_4}\\
+\end{matrix}
+\right)
+\\
+V=\left[v_1,v_2,v_3\right]
+$$</p>
+<p>对于<code>Y.backward(vector)</code>，<code>len(ventor) = len(output) = 3</code>，<code>x_n.grad = sum(v_n*偏导数), n = [1, len(input)]</code>
+$$
+{\bf torch.autograd}=J^T\cdot {\vec v} \\
+{\bf external\_grad}=\vec v
+$$</p>
+<blockquote>
+<p>常见例子</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"># X = [a,b,c]</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"># Y = Q</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="n">Q</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">a</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">-</span> <span class="n">b</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">c</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="n">Q</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]))</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span><span class="n">b</span><span class="o">.</span><span class="n">grad</span><span class="p">,</span><span class="n">c</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># output</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># a.grad -&gt; 9a^2   b.grad -&gt; -2b    c.grad -&gt; 1</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="n">tensor</span><span class="p">([</span><span class="mf">36.</span><span class="p">,</span> <span class="mf">81.</span><span class="p">])</span> <span class="n">tensor</span><span class="p">([</span><span class="o">-</span><span class="mf">12.</span><span class="p">,</span>  <span class="o">-</span><span class="mf">8.</span><span class="p">])</span> <span class="n">tensor</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])</span>
+</span></span></code></pre></div><p>$$
+Q=f(a,b,c)=3a^3-b^2+c
+$$</p>
+<p>$$
+\frac{\partial Q}{\partial a}=9a^2 \ \  \  \frac{\partial Q}{\partial b}=2b   \ \ \  \frac{\partial Q}{\partial c}=1
+$$</p>
+<p>$$
+\left[
+\begin{matrix}
+Q_1 &amp; Q_2
+\end{matrix}
+\right]
+=\left[
+\begin{matrix}
+3a_1^3-b_1^2-c_1 &amp; 3a_2^3-b_2^2-c_2
+\end{matrix}
+\right]
+\\
+Q_1=f(a_1,b_1,c_1)\\
+Q_2=f(a_2,b_2,c_2)
+$$</p>
+<p>对于上述特殊情况，$Q$与向量 $\vec a, \vec b, \vec c$ 之间的关系为 $f$</p>
+<p><code>backward(torch.tensor([1., 1.]))</code>对每个 $Q_n, a_n, b_n, c_n$ 之间求偏导数并乘系数。</p>
+<blockquote>
+<p>高阶导数</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">torch</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">torch.autograd</span> <span class="k">as</span> <span class="nn">autograd</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">,</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;输入变量&#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># 建立计算图 使 df[0]  requires_grad=True</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">grad_outputs</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">create_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># df_r = df[0].clone().requires_grad_(True)</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># 保留计算图,因为后续用到了y和x之间的关系</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"># 此处 grad_outputs 与 y.backward(grad_outputs) 含义一致</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="n">ddf</span> <span class="o">=</span> <span class="n">autograd</span><span class="o">.</span><span class="n">grad</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">grad_outputs</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">y</span><span class="p">),</span> <span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;一阶导数&#34;</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="s2">&#34;二阶导数&#34;</span><span class="p">,</span> <span class="n">ddf</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"># y.backward(torch.tensor([1,1,1,1]))</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="n">y</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c1"># backward将梯度存到自变量的grad属性中,并且累计</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;一阶导数&#34;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="c1"># 手动清零</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">zero_</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;二阶导数&#34;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="c1"># 由此可构造 f_n 阶导 </span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="k">def</span> <span class="nf">f_n</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="n">f</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">            <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">wrt</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">        <span class="n">grads</span> <span class="o">=</span> <span class="n">grad</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">wrt</span><span class="p">,</span> <span class="n">create_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">        <span class="n">f</span> <span class="o">=</span> <span class="n">grads</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">    <span class="k">return</span> <span class="n">grads</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">
+</span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="o">---</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="n">output</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ao</span><span class="o">/</span><span class="n">Project</span><span class="o">/</span><span class="n">Pycharm</span><span class="o">/</span><span class="n">d2dl</span><span class="o">/</span><span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">ao</span><span class="o">/</span><span class="n">Project</span><span class="o">/</span><span class="n">Pycharm</span><span class="o">/</span><span class="n">d2dl</span><span class="o">/</span><span class="n">test</span><span class="o">.</span><span class="n">py</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl"><span class="n">输入变量</span> <span class="n">tensor</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="n">requires_grad</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="n">一阶导数</span> <span class="p">(</span><span class="n">tensor</span><span class="p">([</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">27.</span><span class="p">],</span> <span class="n">grad_fn</span><span class="o">=&lt;</span><span class="n">MulBackward0</span><span class="o">&gt;</span><span class="p">),)</span> <span class="n">二阶导数</span> <span class="p">(</span><span class="n">tensor</span><span class="p">([</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">6.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">18.</span><span class="p">]),)</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl"><span class="n">一阶导数</span> <span class="n">tensor</span><span class="p">([</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">27.</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl"><span class="n">二阶导数</span> <span class="n">tensor</span><span class="p">([</span> <span class="mf">0.</span><span class="p">,</span>  <span class="mf">6.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">18.</span><span class="p">])</span>
+</span></span></code></pre></div>
+					
+					
+							
+					
+				</section>
+				
+				
+
+<ul class="pagination">
+	<span class="page-item page-prev">
+	
+    <a href="/page/3/" class="page-link" aria-label="Previous"><span aria-hidden="true">← Prev</span></a>
+	
+	</span>
+	<span class="page-item page-next">
+	
+    <a href="/page/5/" class="page-link" aria-label="Next"><span aria-hidden="true">Next →</span></a>
+	
+	</span>
+</ul>
+
+
+			</main>
+			<footer>
+<hr>
+<a class="soc" href="https://github.com/gohugoio/hugo" title="GitHub"><i data-feather="github"></i></a>
+<a class="soc" href="https://www.bilibili.com/" title="bilibili"><i data-feather="tv"></i></a>
+✔️
+      2022  AO 
+</footer>
+
+
+<script>
+      feather.replace()
+</script>
+		</div>
+		
+	</body>
+</html>

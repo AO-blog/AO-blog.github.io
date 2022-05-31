@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+	<title>Arch Linux 配置 - 归宅部</title><link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico /><meta id="viewport" name="viewport">
+
+<script type="text/javascript">
+
+(function(){
+
+  function apply_viewport(){
+    
+
+      var ww = window.screen.width;
+      var mw = 680; 
+      var ratio =  ww / mw; 
+      var viewport_meta_tag = document.getElementById('viewport');
+      if( ww < mw){ 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', width=device-width');
+      }
+      else { 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, width=device-width');
+      }
+    
+  }
+
+  
+  window.addEventListener('resize', function(){
+    apply_viewport();
+  });
+
+  apply_viewport();
+
+}());
+</script>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	<script src="https://ao2233.xyz/js/feather.min.js"></script>
+	
+	
+	
+        <link href="https://ao2233.xyz/css/fonts.css" rel="stylesheet">
+	
+
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ao2233.xyz/css/main.9b8e8a799f6e2e28df142ec99e798c0b6f9ea416e05cd70d7d82c6ac53d3b1c3.css" />
+
+	
+	
+	
+	<link rel="stylesheet" href="https://ao2233.xyz/aplayer/APlayer.min.css" >
+	<script src="https://ao2233.xyz/aplayer/APlayer.min.js"></script>
+	<script src="https://ao2233.xyz/dplayer/DPlayer.min.js"></script>
+	<script src="https://ao2233.xyz/js/pdfobject.min.js"></script>
+
+	<link rel="stylesheet" href="https://ao2233.xyz/js/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://ao2233.xyz/js/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://ao2233.xyz/js/auto-render.min.js" crossorigin="anonymous"  onload="renderMathInElement(document.body);"></script>
+
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+				{left: "$$", right: "$$", display: true},
+				{left: "\\[", right: "\\]", display: true},
+				{left: "$", right: "$", display: false},
+				{left: "\\(", right: "\\)", display: false},
+				
+				
+				
+				
+				
+				]
+			});
+		});
+	</script>
+
+	<script src="https://ao2233.xyz/js/mermaid.min.js"></script>
+		
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://ao2233.xyz/css/dark.0c347dbf372552c4028878b51c7d5207c1cde76047704ef7935a61ac0a29e7d4.css"media="(prefers-color-scheme: dark)"  />
+		<script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		var config = {
+			startOnLoad:true,
+			flowchart:{
+			useMaxWidth:true,
+			htmlLabels:true,
+			curve:'cardinal',
+			},
+			securityLevel:'loose',
+		};
+		var a=0;
+		function darkModeHandler() {
+			if (mediaQuery.matches) {
+				mermaid.initialize({
+					
+					theme: 'dark',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('深色模式')
+			} else {
+				mermaid.initialize({
+					
+					theme: 'base',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('浅色模式')
+			}
+		}
+
+		
+		darkModeHandler()
+		
+		mediaQuery.addListener(darkModeHandler)
+
+		</script>
+		
+
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://ao2233.xyz/">归宅部</a>
+		<link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico />
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Arch Linux 配置</h1>
+			<div class="meta">Posted on Jan 5, 2022 <span class="draft-label">DRAFT</span> </div>
+		</div>
+		
+
+		<section class="body">
+			<h1 id="arch的优势">arch的优势</h1>
+<ol>
+<li>内核最新，有助于解决各种硬件适配问题</li>
+<li>不用自己打包，手动编译，比如<code>mpv-full</code>的<code>vapoursynth</code>模块依赖，或 <code>cuda</code> or <code>cudnn</code> 等等</li>
+<li>安装包的速度快，全方面定制</li>
+<li>各发行版中最方便的，就长期使用而言应该是最省心的</li>
+</ol>
+<h1 id="可能的问题">可能的问题</h1>
+<ol>
+<li>稳定性待考查，只能最新包，可能产生兼容问题</li>
+<li>安装对比图形界面而言还是较为繁琐（但是此时间与手动编译<code>ffmpeg-full</code>的时间相比，不值一提）</li>
+<li>如果只是编译机或者服务器，建议<code>ubuntu</code>或者<code>debian</code></li>
+<li>不管如何兼容软件不如<code>Windows</code>，无论是<code>gnome</code>还是<code>KDE</code>，均存在大量bug，<code>xorg</code>老牛拉破车</li>
+<li><code>systemed</code>滚挂了</li>
+</ol>
+<h1 id="usb的准备">USB的准备</h1>
+<p>建议使用<a href="https://www.ventoy.net/">ventoy</a></p>
+<p>下载<code>arch</code>的<a href="https://mirrors.tuna.tsinghua.edu.cn/#">镜像</a></p>
+<h1 id="安装">安装</h1>
+<blockquote>
+<p>联网 &amp; 镜像设置</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">iwctl
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">device list
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">station wlan0 scan
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">station wlan0 get-networks
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">station wlan0 connect wifi_name
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"># 仅仅支持非特殊字符的wifi</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">vim /etc/pacman.d/mirrorlist 
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">pacman -Syy
+</span></span></code></pre></div><blockquote>
+<p>分区</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># nvme固态通常叫nvme，其余通常叫sda。看总线接口。</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">cfdisk /dev/nvme0n1
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># 图形化分区</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">mkfs.ext4 /dev/nvme0n1px
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"># 仅仅单系统时使用，efi分区重建，但是这样建议直接arch_install脚本</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">mkfs.fat -F <span class="m">32</span> /dev/nvme0n1p1
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"># 当然可以选择其他便于拓展的格式</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">mount /dev/nvme0n1px /mnt
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1">#对16G以上的系统不建议swap硬分区，直接swap文件即可。设置大小&gt;1xRAM。</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">mkdir /mnt/efi
+</span></span><span class="line"><span class="ln">11</span><span class="cl">mount /dev/nvme0n1p1 /mnt/efi   <span class="c1"># 把efi分区挂到efi下</span>
+</span></span></code></pre></div><blockquote>
+<p>安装</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">pacstrap /mnt base linux linux-firmware networkmanager vim nano grub efibootmgr os-prober ntfs-3g sudo
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</span></span><span class="line"><span class="ln">4</span><span class="cl">cat /mnt/etc/fstab <span class="c1"># 检查配置</span>
+</span></span></code></pre></div><blockquote>
+<p>进入arch</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">arch-chroot /mnt
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"># 密码设置</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">passwd
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"># 时区</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"># or</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">timedatectl set-timezone Asia/Shanghai
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># 硬件同步</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">hwclock --systohc
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># 语言</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">vim /etc/locale.gen
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"># LANG=en_US.UTF-8</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c1"># LANG=zh_CN.UTF-8</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">vim /etc/locale.conf
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="c1"># 为了目录名称为中文</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+</span></span><span class="line"><span class="ln">18</span><span class="cl">locale-gen
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="c1"># 网络配置</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">vim /etc/hostname
+</span></span><span class="line"><span class="ln">22</span><span class="cl">vim /etc/hosts
+</span></span><span class="line"><span class="ln">23</span><span class="cl">
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="c1"># 127.0.0.1	localhost</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c1"># ::1	localhost</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c1"># 127.0.1.1	myhostname.localdomain	myhostname # 主机名.本地域名 主机名</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="c1"># grub 启动器的安装</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="c1"># 此处</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">grub-install --target<span class="o">=</span>x86_64-efi --efi-directory<span class="o">=</span>/efi/efi --bootloader-id<span class="o">=</span>arch
+</span></span><span class="line"><span class="ln">31</span><span class="cl">
+</span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="c1"># grub-install --target=x86_64-efi --efi-directory=(你的挂载文件夹名称) --bootloader-id=(最终安装路径 /nvme0n1p1/EFI/名称）</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">
+</span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="c1"># 允许索引其余的操作系统</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">vim /etc/default/grub 
+</span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="c1"># 去掉 splash</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="c1"># GRUB_DISABLE_OS_PROBER=false</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">grub-mkconfig -o /boot/grub/grub.cfg
+</span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="c1"># 重启</span>
+</span></span></code></pre></div><h1 id="图形界面">图形界面</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">systemctl <span class="nb">enable</span> --now NetworkManager
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">nmtui <span class="c1"># 联网</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># 用户建立</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">useradd -m -G wheel ao
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">passwd ao
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"># 编辑 sudoers</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"># 收工</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">pacman -S xf86-video-amdgpu nvidia nvidia-utils  nvidia-settings amd-ucode nvidia-dkms xorg gdm gnome
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># 当然也可以选择zen内核</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># reboot</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">systemctl <span class="nb">enable</span> gdm
+</span></span></code></pre></div><h1 id="之后的事情">之后的事情</h1>
+<ol>
+<li>$\bf Nvidia$ 配置</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 名称可能不是 nvidia.conf</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"># sudo cp -p /usr/share/X11/xorg.conf.d/10-nvidia-drm-outputclass.conf  /etc/X11/xorg.conf.d/</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">sudo cp -p /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">sudo nano /etc/X11/xorg.conf.d/nvidia.conf
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">Option <span class="s2">&#34;PrimaryGPU&#34;</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"># ex:</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">more /etc/X11/xorg.conf.d/10-nvidia-drm.conf 
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">Section <span class="s2">&#34;OutputClass&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    Identifier <span class="s2">&#34;nvidia&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    MatchDriver <span class="s2">&#34;nvidia-drm&#34;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    Driver <span class="s2">&#34;nvidia&#34;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    Option <span class="s2">&#34;AllowEmptyInitialConfiguration&#34;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    ModulePath <span class="s2">&#34;/usr/lib/nvidia/xorg&#34;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    ModulePath <span class="s2">&#34;/usr/lib/xorg/modules&#34;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">    Option <span class="s2">&#34;PrimaryGPU&#34;</span> <span class="s2">&#34;yes&#34;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">EndSection
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>archlinuxcn &amp; yay</p>
+</li>
+<li>
+<p>chrome</p>
+</li>
+<li>
+<p>mpv-full</p>
+</li>
+<li>
+<p>theme  <a href="https://github.com/vinceliuice/Orchis-theme">$Ochis$</a> $papirus$</p>
+</li>
+</ol>
+
+		</section>
+
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>
+<a class="soc" href="https://github.com/gohugoio/hugo" title="GitHub"><i data-feather="github"></i></a>
+<a class="soc" href="https://www.bilibili.com/" title="bilibili"><i data-feather="tv"></i></a>
+✔️
+      2022  AO 
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

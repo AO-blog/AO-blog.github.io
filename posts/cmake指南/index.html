@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+	<title>CMake指南 - 归宅部</title><link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico /><meta id="viewport" name="viewport">
+
+<script type="text/javascript">
+
+(function(){
+
+  function apply_viewport(){
+    
+
+      var ww = window.screen.width;
+      var mw = 680; 
+      var ratio =  ww / mw; 
+      var viewport_meta_tag = document.getElementById('viewport');
+      if( ww < mw){ 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', width=device-width');
+      }
+      else { 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, width=device-width');
+      }
+    
+  }
+
+  
+  window.addEventListener('resize', function(){
+    apply_viewport();
+  });
+
+  apply_viewport();
+
+}());
+</script>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	<script src="https://ao2233.xyz/js/feather.min.js"></script>
+	
+	
+	
+        <link href="https://ao2233.xyz/css/fonts.css" rel="stylesheet">
+	
+
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ao2233.xyz/css/main.9b8e8a799f6e2e28df142ec99e798c0b6f9ea416e05cd70d7d82c6ac53d3b1c3.css" />
+
+	
+	
+	
+	<link rel="stylesheet" href="https://ao2233.xyz/aplayer/APlayer.min.css" >
+	<script src="https://ao2233.xyz/aplayer/APlayer.min.js"></script>
+	<script src="https://ao2233.xyz/dplayer/DPlayer.min.js"></script>
+	<script src="https://ao2233.xyz/js/pdfobject.min.js"></script>
+
+	<link rel="stylesheet" href="https://ao2233.xyz/js/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://ao2233.xyz/js/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://ao2233.xyz/js/auto-render.min.js" crossorigin="anonymous"  onload="renderMathInElement(document.body);"></script>
+
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+				{left: "$$", right: "$$", display: true},
+				{left: "\\[", right: "\\]", display: true},
+				{left: "$", right: "$", display: false},
+				{left: "\\(", right: "\\)", display: false},
+				
+				
+				
+				
+				
+				]
+			});
+		});
+	</script>
+
+	<script src="https://ao2233.xyz/js/mermaid.min.js"></script>
+		
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://ao2233.xyz/css/dark.0c347dbf372552c4028878b51c7d5207c1cde76047704ef7935a61ac0a29e7d4.css"media="(prefers-color-scheme: dark)"  />
+		<script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		var config = {
+			startOnLoad:true,
+			flowchart:{
+			useMaxWidth:true,
+			htmlLabels:true,
+			curve:'cardinal',
+			},
+			securityLevel:'loose',
+		};
+		var a=0;
+		function darkModeHandler() {
+			if (mediaQuery.matches) {
+				mermaid.initialize({
+					
+					theme: 'dark',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('深色模式')
+			} else {
+				mermaid.initialize({
+					
+					theme: 'base',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('浅色模式')
+			}
+		}
+
+		
+		darkModeHandler()
+		
+		mediaQuery.addListener(darkModeHandler)
+
+		</script>
+		
+
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://ao2233.xyz/">归宅部</a>
+		<link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico />
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">CMake指南</h1>
+			<div class="meta">Posted on Dec 31, 2021 <span class="draft-label">DRAFT</span> </div>
+		</div>
+		
+
+		<section class="body">
+			<blockquote>
+<p>CMake 基本结构</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c"># 设置cmake最低版本
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span> <span class="s">3.5</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="err"></span><span class="c"># 工程名称
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="nb">project</span> <span class="p">(</span><span class="s">hello_headers</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="err"></span><span class="c"># 设置变量或者别名
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c"></span><span class="nb">set</span><span class="p">(</span><span class="s">SOURCE</span> <span class="s">src</span><span class="p">)</span>		<span class="c"># 引用方式 ${name}
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c"># 遍历文件
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c"></span><span class="nb">file</span><span class="p">(</span><span class="s">GLOB</span> <span class="s">LIB_FILE</span> <span class="s">src/lib/*c</span><span class="p">)</span>		<span class="c"># 将所有.c*的文件作为LIB_FILE
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c"></span><span class="nb">file</span><span class="p">(</span><span class="s">GLOB_RECURSE</span> <span class="s">src/lib/*c</span><span class="p">)</span> <span class="c"># 在lib文件夹下递归寻找.c*文件作为LIB_FILE
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c"># 引入头文件库
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c"># 设置链接库 
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c"># 设置生成文件
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c"># 设置编译FLAG
+</span></span></span></code></pre></div><blockquote>
+<p>引入头文件库</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">include_directories</span><span class="p">(</span><span class="s">目录</span><span class="p">)</span> <span class="c"># 为所有目标引入
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">目标名称</span> <span class="s">属性</span> <span class="s">目录</span><span class="p">)</span> <span class="c"># 为特定目标引入
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="err"></span><span class="c"># 1 在 add_excutable() 前引入
+</span></span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c"># 2 在 add_excutable() 后引入
+</span></span></span></code></pre></div><blockquote>
+<p>引入链接库</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c"># 如果不引入add_library() 那么在add_excutable()时 需要将用到的文件全部加入到其中
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">hello_headers</span> <span class="s">src/main.cpp</span> <span class="s">src/Hello.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="err"></span><span class="c"># 创建链接库
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c"></span><span class="nb">add_library</span><span class="p">(</span><span class="s">新建的链接库名字</span> <span class="s">动态or静态</span> <span class="s">包含的文件</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="err"></span><span class="c"># 引入链接库
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c"></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">目标</span> <span class="s">属性</span> <span class="s">库名</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="err"></span><span class="nb">link_libraries</span><span class="p">(</span><span class="s">属性</span> <span class="s">库名</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="err"></span><span class="c"># 1 在 add_excutable() 前引入
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c"># 2 在 add_excutable() 后引入
+</span></span></span></code></pre></div><blockquote>
+<p>设置生成文件</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">add_excutable</span><span class="p">(</span><span class="s">生成名</span> <span class="s">带main函数文件名</span><span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>编译FLAG设置</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln">1</span><span class="cl"><span class="c"># 最常用优化
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c"></span><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_C_FLAGS</span> <span class="s2">&#34;${CMAKE_C_FLAGS} -O2&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="err"></span><span class="nb">SET</span><span class="p">(</span><span class="s">CMAKE_CXX_FLAGS</span> <span class="s2">&#34;${CMAKE_CXX_FLAGS} -O2&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="err"></span><span class="nb">set</span> <span class="p">(</span><span class="s">CMAKE_CXX_FLAGS</span> <span class="s2">&#34;${CMAKE_CXX_FLAGS} -DABC=1&#34;</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="err"></span><span class="c"># 等同于 加入 #define ABC 1;
+</span></span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c"></span><span class="nb">add_compile_definitions</span><span class="p">(</span><span class="s">EX3=5</span> <span class="s">ABC=2</span><span class="p">)</span>  <span class="c"># 全局 (无放置位置要求)
+</span></span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="c"></span><span class="nb">target_compile_definitions</span><span class="p">(</span><span class="s">exp</span> <span class="s">PRIVATE</span> <span class="s">EX3=5</span><span class="p">)</span> <span class="c"># 仅对exp
+</span></span></span></code></pre></div><blockquote>
+<p>导入系统库</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nb">find_pakge</span><span class="p">()</span> <span class="c"># 寻找 FindXXX.cmake
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c"></span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="err"></span><span class="c"># GLOG 库
+</span></span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c"></span><span class="nb">find_package</span><span class="p">(</span><span class="s">GLOG</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="err"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">glogtest</span> <span class="s">glogtest.cc</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="err"></span><span class="nb">if</span><span class="p">(</span><span class="s">GLOG_FOUND</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="err"></span>    <span class="c"># glog 自己的cmake已经include了头文件 直接link即可
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c"></span>    <span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">glogtest</span> <span class="s">glog::glog</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="err"></span><span class="nb">else</span><span class="p">(</span><span class="s">GLOG_FOUND</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="err"></span>    <span class="nb">message</span><span class="p">(</span><span class="s">FATAL_ERROR</span> <span class="s">”GLOG</span> <span class="s">library</span> <span class="s">not</span> <span class="s">found”</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="err"></span><span class="nb">endif</span><span class="p">(</span><span class="s">GLOG_FOUND</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="err"></span><span class="c"># OPENGL
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c"></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">test</span> <span class="s">main.cpp</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="err"></span><span class="nb">find_package</span><span class="p">(</span><span class="s">OpenGL</span> <span class="s">REQUIRED</span><span class="p">)</span> <span class="c"># 带REQUIRED参数未找到时 直接stop
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="c"></span><span class="nb">find_package</span><span class="p">(</span><span class="s">GLUT</span> <span class="s">REQUIRED</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="err"></span><span class="nb">include_directories</span><span class="p">(</span><span class="o">${</span><span class="nv">OPENGL_INCLUDE_DIRS</span><span class="o">}</span>  <span class="o">${</span><span class="nv">GLUT_INCLUDE_DIRS</span><span class="o">}</span> <span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="err"></span><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">test</span> <span class="o">${</span><span class="nv">OPENGL_LIBRARIES</span><span class="o">}</span> <span class="o">${</span><span class="nv">GLUT_LIBRARY</span><span class="o">}</span> <span class="p">)</span><span class="err">
+</span></span></span></code></pre></div><blockquote>
+<p>不常用</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmake" data-lang="cmake"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">link_directories</span><span class="p">(</span><span class="s">目录</span><span class="p">)</span><span class="err">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="err"></span><span class="nb">target_link_directories</span><span class="p">()</span><span class="err">
+</span></span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="err">
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="err"></span><span class="c"># 在目录中寻找链接库文件dll、so、a等
+</span></span></span></code></pre></div><h3 id="手动编译">手动编译</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 文件目录</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">├── CMakeLists.txt
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">├── include
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">│       └── ds.h
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">├── lib
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">│      └─ ds.cpp
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">└── src
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        └── main.cpp
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"># 简单方式</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">&gt; g++ -I include  src/main.cpp lib/ds.cpp
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"># -I 指定 头文件目录</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"># 后面的 分别编译 之后链接</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1"># 完整手动</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">&gt; g++ -I include  -c src/main.cpp -o src/main.o
+</span></span><span class="line"><span class="ln">17</span><span class="cl">&gt; g++ -I include  -c src/ds.cpp -o src/ds.o
+</span></span><span class="line"><span class="ln">18</span><span class="cl">&gt; g++ -I include  src/main.o src/ds.o
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1"># 多个目录 -I D1 -I D2</span>
+</span></span></code></pre></div>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>
+<a class="soc" href="https://github.com/gohugoio/hugo" title="GitHub"><i data-feather="github"></i></a>
+<a class="soc" href="https://www.bilibili.com/" title="bilibili"><i data-feather="tv"></i></a>
+✔️
+      2022  AO 
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

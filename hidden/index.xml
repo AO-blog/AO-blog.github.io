@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hiddens on 归宅部</title>
+    <link>https://ao2233.xyz/hidden/</link>
+    <description>Recent content in Hiddens on 归宅部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>AO</copyright>
+    <lastBuildDate>Wed, 04 May 2022 19:10:46 +0800</lastBuildDate><atom:link href="https://ao2233.xyz/hidden/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>朋友</title>
+      <link>https://ao2233.xyz/hidden/friend/</link>
+      <pubDate>Wed, 04 May 2022 19:10:46 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/hidden/friend/</guid>
+      <description>如题，但绝不败给自己的抑郁！
+即便如此，依旧相信。
+  ap = new APlayer({ container: document.getElementById(&#39;1&#39;), fixed: &#39;&#39;, audio: [{ name: &#39;Holy Passion Roses&#39; , artist: &#39;堀江由衣,松嵜麗&#39;, url: &#39;https:\/\/ao2233.xyz\/\/media\/a\/Holy_Passion_Roses.mp3&#39;, cover: &#39;\/media\/pic\/music.png&#39;, autoplay: &#39;true&#39;, lrc: &#39;无歌词&#39; }] });  </description>
+    </item>
+    
+    <item>
+      <title>一点都不蓝色的2021</title>
+      <link>https://ao2233.xyz/hidden/2021end/</link>
+      <pubDate>Wed, 15 Dec 2021 19:47:47 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/hidden/2021end/</guid>
+      <description>今年对于我而言，已经结束了。
+  ap = new APlayer({ container: document.getElementById(&#39;1&#39;), fixed: &#39;&#39;, audio: [{ name: &#39;雨のち想い出&#39; , artist: &#39;秋之回忆&#39;, url: &#39;https:\/\/ao2233.xyz\/\/media\/a\/雨のち想い出.mp3&#39;, cover: &#39;\/media\/pic\/2022\/cover.jpg&#39;, autoplay: &#39;true&#39;, lrc: &#39;无歌词&#39; }] });  虽然25号还有全国研究生统一招生考试，这一刑场等着我去受刑。（龙宫院最后的战斗，最终决战的魔女之夜）
+但是学院里，实际上已经放了假，给考研学生的慰问品刚刚发放到位，并通知最后3周的项目教学线上进行，同时只提交电子报告。换而言之，只要胆子大，现在就能买张票，明天就能看到家里的太阳了。
+然后，明年这个点再战？我深有预感，假设今年做了逃兵，那么明年此刻，我定然也是逃兵。所以，逃げちゃ駄目だ!逃げちゃ駄目だ!!逃げちゃ駄目だ!!!
+即使知道必败无疑，还是只能上了。残念的是，这里就是我的战场。
+  ap = new APlayer({ container: document.getElementById(&#39;2&#39;), fixed: &#39;&#39;, audio: [{ name: &#39;Magia&#39; , artist: &#39;Kalafina&#39;, url: &#39;https:\/\/ao2233.xyz\/\/media\/a\/Magia.mp3&#39;, cover: &#39;\/media\/pic\/2022\/qb.jpg&#39;, autoplay: &#39;true&#39;, lrc: &#39;无歌词&#39; }] });  我躺在家里的床上，仔细思索这四年，到底学了什么——就结论而言——什么都没学到。
+1随便举例 (;´д｀） 2数据结构、算法 -&amp;gt; 手写反转红黑树的故事永不过时 3操作系统 -&amp;gt; 详细解释一下，系统从加电后开始的启动过程，汇编不行，源码看不懂啊 4深度学习 -&amp;gt; 调包侠，调参侠 -&amp;gt; import tensorflow as torch 5Web C# QT -&amp;gt; 做的都是玩具，中专都比我行。简而言之，新世纪API战士 6Android -&amp;gt; 是 计算器app 还是 天气app ORZ 7linux -&amp;gt; 不是Arch爱好者，Windows最香了。BTW I use Windows.</description>
+    </item>
+    
+    <item>
+      <title>小飞机</title>
+      <link>https://ao2233.xyz/hidden/ss/</link>
+      <pubDate>Fri, 10 Dec 2021 09:51:27 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/hidden/ss/</guid>
+      <description>服务器快速部署
+ 1&amp;gt; zsh 安装 23apt install zsh -y; 4# zsh-syntax-highlighting 5sh -c &amp;#34;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&amp;#34;; 6git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting; 7# zsh-autosuggestions 8git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions; 910plugins=(git zsh-syntax-highlighting zsh-autosuggestions) # 主题 ys 11ZSH_THEME=&amp;#34;ys&amp;#34; 1213chsh -s /bin/zsh  What&amp;rsquo;s more
+ 剩余步骤</description>
+    </item>
+    
+  </channel>
+</rss>

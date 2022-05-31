@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+	<title>Linux/ubuntu/debian 其他配置 - 归宅部</title><link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico /><meta id="viewport" name="viewport">
+
+<script type="text/javascript">
+
+(function(){
+
+  function apply_viewport(){
+    
+
+      var ww = window.screen.width;
+      var mw = 680; 
+      var ratio =  ww / mw; 
+      var viewport_meta_tag = document.getElementById('viewport');
+      if( ww < mw){ 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', width=device-width');
+      }
+      else { 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, width=device-width');
+      }
+    
+  }
+
+  
+  window.addEventListener('resize', function(){
+    apply_viewport();
+  });
+
+  apply_viewport();
+
+}());
+</script>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	<script src="https://ao2233.xyz/js/feather.min.js"></script>
+	
+	
+	
+        <link href="https://ao2233.xyz/css/fonts.css" rel="stylesheet">
+	
+
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ao2233.xyz/css/main.9b8e8a799f6e2e28df142ec99e798c0b6f9ea416e05cd70d7d82c6ac53d3b1c3.css" />
+
+	
+	
+	
+	<link rel="stylesheet" href="https://ao2233.xyz/aplayer/APlayer.min.css" >
+	<script src="https://ao2233.xyz/aplayer/APlayer.min.js"></script>
+	<script src="https://ao2233.xyz/dplayer/DPlayer.min.js"></script>
+	<script src="https://ao2233.xyz/js/pdfobject.min.js"></script>
+
+	<link rel="stylesheet" href="https://ao2233.xyz/js/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://ao2233.xyz/js/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://ao2233.xyz/js/auto-render.min.js" crossorigin="anonymous"  onload="renderMathInElement(document.body);"></script>
+
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+				{left: "$$", right: "$$", display: true},
+				{left: "\\[", right: "\\]", display: true},
+				{left: "$", right: "$", display: false},
+				{left: "\\(", right: "\\)", display: false},
+				
+				
+				
+				
+				
+				]
+			});
+		});
+	</script>
+
+	<script src="https://ao2233.xyz/js/mermaid.min.js"></script>
+		
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://ao2233.xyz/css/dark.0c347dbf372552c4028878b51c7d5207c1cde76047704ef7935a61ac0a29e7d4.css"media="(prefers-color-scheme: dark)"  />
+		<script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		var config = {
+			startOnLoad:true,
+			flowchart:{
+			useMaxWidth:true,
+			htmlLabels:true,
+			curve:'cardinal',
+			},
+			securityLevel:'loose',
+		};
+		var a=0;
+		function darkModeHandler() {
+			if (mediaQuery.matches) {
+				mermaid.initialize({
+					
+					theme: 'dark',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('深色模式')
+			} else {
+				mermaid.initialize({
+					
+					theme: 'base',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('浅色模式')
+			}
+		}
+
+		
+		darkModeHandler()
+		
+		mediaQuery.addListener(darkModeHandler)
+
+		</script>
+		
+
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://ao2233.xyz/">归宅部</a>
+		<link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico />
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Linux/ubuntu/debian 其他配置</h1>
+			<div class="meta">Posted on Dec 9, 2021</div>
+		</div>
+		
+
+		<section class="body">
+			<blockquote>
+<p>Grub</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="na">png 只能8位</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="na">jpg 无所谓</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="na">./install.sh</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="na">sudo vim /etc/default/grub</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="na">GRUB_THEME</span><span class="o">=</span><span class="s">&#34;/usr/share/grub/themes/Tela/theme.txt&#34;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="na">update-grub</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="na">主题路径</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="na">/usr/share/grub/themes/Tela</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="na">字体问题</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="na">制作字体</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="na">sudo grub-mkfont &#39;/home/ao/下载/sarasa-ui-sc-regular.ttf&#39;  -o sarasa_22.pf2  -s 22 -v</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="na">替换 </span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="na">theme.txt</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"># Show a countdown message using the label component</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="na">+ label {</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">  <span class="na">top</span> <span class="o">=</span> <span class="s">82%
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="s">  left = 32%
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="s">  width = 30%
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="s">  align = &#34;center&#34;
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="s">  id = &#34;__timeout__&#34;
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="s">  text = &#34;少女祈祷中... %d\n请选择...&#34;
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="s">  color = &#34;#cccccc&#34;
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="s">  font = &#34;Sarasa UI SC Regular 26&#34;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="na">}</span>
+</span></span></code></pre></div><blockquote>
+<p>硬件监控</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="ln">1</span><span class="cl">sudo apt install lm-sensors
+</span></span><span class="line"><span class="ln">2</span><span class="cl">sudo sensors-detect
+</span></span><span class="line"><span class="ln">3</span><span class="cl">sensors
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">sudo apt install psensor <span class="c1"># 图形端</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">nmon
+</span></span></code></pre></div><blockquote>
+<p>VapourSynth</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-txt" data-lang="txt"><span class="line"><span class="ln">1</span><span class="cl">debian 更有优势
+</span></span><span class="line"><span class="ln">2</span><span class="cl">已经包含了 deb https://www.deb-multimedia.org {ver/sid} main non-free
+</span></span><span class="line"><span class="ln">3</span><span class="cl">内置多种源
+</span></span><span class="line"><span class="ln">4</span><span class="cl">建议之后使用 Debian sid
+</span></span></code></pre></div><blockquote>
+<p>主题</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">sudo apt install adapta-gtk-theme
+</span></span><span class="line"><span class="ln">2</span><span class="cl">Pop
+</span></span><span class="line"><span class="ln">3</span><span class="cl">open /usr/share/themes/Pop-dark/gnome-shell/gnome-shell.css
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nt">Pop</span> <span class="nt">gnome-shell</span><span class="p">.</span><span class="nc">css</span> <span class="nt">魔改</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c">/* 透明栏 魔改版 by ao  */</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">#</span><span class="nn">panel</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mf">0.54</span><span class="p">);</span> 
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="kc">transparent</span><span class="p">;</span> 
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  <span class="k">height</span><span class="p">:</span> <span class="mf">1.86</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="k">font-feature-settings</span><span class="p">:</span> <span class="s2">&#34;tnum&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">  <span class="k">transition-timing-function</span><span class="p">:</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> 
+</span></span><span class="line"><span class="ln">10</span><span class="cl">  <span class="k">transition-duration</span><span class="p">:</span> <span class="mf">0.4</span><span class="kt">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c">/* end  */</span>	
+</span></span></code></pre></div><blockquote>
+<p>open</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">open: aliased to xdg-open
+</span></span></code></pre></div><blockquote>
+<p>v2ray</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">建议直接使用 AppImage
+</span></span></code></pre></div><blockquote>
+<p>Matlab 图标问题</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln"> 1</span><span class="cl">/usr/share/applications 
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="o">[</span>Desktop Entry<span class="o">]</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">Version</span><span class="o">=</span>1.0
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nv">Type</span><span class="o">=</span>Application
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="nv">Name</span><span class="o">=</span>matlab
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="nv">Comment</span><span class="o">=</span>matlab
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nv">Icon</span><span class="o">=</span>/home/ao/v2ray/matlab.png
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="nv">Exec</span><span class="o">=</span>/usr/local/Polyspace/R2020b/bin/matlab -desktop
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="nv">Categories</span><span class="o">=</span>Math
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="nv">Terminal</span><span class="o">=</span><span class="nb">false</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nv">StartupNotify</span><span class="o">=</span><span class="nb">true</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="nv">StartupWMClass</span><span class="o">=</span>MATLAB R2020b   
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="c1"># xprop WM_CLASS</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="c1"># 确定StartupWMClass=MATLAB R2020b多图标 gnome 启动问题</span>
+</span></span></code></pre></div><blockquote>
+<p>apt</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">my_apt: aliased to sudo apt install --no-install-recommends
+</span></span><span class="line"><span class="ln">2</span><span class="cl">只安装强依赖包
+</span></span><span class="line"><span class="ln">3</span><span class="cl">比如 ibus-anthy 字典不需要
+</span></span><span class="line"><span class="ln">4</span><span class="cl">ubuntu/gnome 设置语言输入法从系统中添加
+</span></span></code></pre></div><blockquote>
+<p>fusuma 缩放支持</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln">1</span><span class="cl">详见github
+</span></span><span class="line"><span class="ln">2</span><span class="cl">sudo gem install fusuma
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl">启动 ./xprofile
+</span></span><span class="line"><span class="ln">5</span><span class="cl">newgrp input <span class="c1"># 登陆input</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">fusuma <span class="p">&amp;</span> 
+</span></span></code></pre></div><blockquote>
+<p>zsh</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">p10k 
+</span></span><span class="line"><span class="ln">2</span><span class="cl">安装 ohmyzsh 自动询问是否切换
+</span></span><span class="line"><span class="ln">3</span><span class="cl">/etc/passwd 直接改
+</span></span></code></pre></div><blockquote>
+<p>Airpods 无法连接</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">sudo vim /etc/bluetooth/main.conf
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl"># 修改模式
+</span></span><span class="line"><span class="ln">4</span><span class="cl"># ControllerMode = dual
+</span></span><span class="line"><span class="ln">5</span><span class="cl">ControllerMode = bredr
+</span></span></code></pre></div><blockquote>
+<p>docker 用户组 访问 unix 通信</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln"> 1</span><span class="cl">创建docker组。
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">sudo groupadd docker
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">将您的用户添加到docker组中。
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">sudo usermod -aG docker <span class="nv">$USER</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">默认镜像存放路径
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">/var/lib/docker/ 
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl">信息查看
+</span></span><span class="line"><span class="ln">11</span><span class="cl">docker info
+</span></span></code></pre></div><blockquote>
+<p>对ubuntu桌面的改造</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="ln">1</span><span class="cl">sudo apt remove gnome-shell-extension-ubuntu-dock
+</span></span><span class="line"><span class="ln">2</span><span class="cl">正在读取软件包列表... 完成
+</span></span><span class="line"><span class="ln">3</span><span class="cl">正在分析软件包的依赖关系树       
+</span></span><span class="line"><span class="ln">4</span><span class="cl">正在读取状态信息... 完成       
+</span></span><span class="line"><span class="ln">5</span><span class="cl">下列软件包将被【卸载】：
+</span></span><span class="line"><span class="ln">6</span><span class="cl">  gnome-shell-extension-ubuntu-dock ubuntu-desktop ubuntu-desktop-minimal
+</span></span><span class="line"><span class="ln">7</span><span class="cl">升级了 <span class="m">0</span> 个软件包，新安装了 <span class="m">0</span> 个软件包，要卸载 <span class="m">3</span> 个软件包，有 <span class="m">0</span> 个软件包未被升级。
+</span></span><span class="line"><span class="ln">8</span><span class="cl">解压缩后将会空出 <span class="m">756</span> kB 的空间。y
+</span></span></code></pre></div><blockquote>
+<p>ubuntu 桌面问题</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="c1"># 移除或禁用 Ubuntu Dock</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"># 这会删除 ubuntu-desktop 元数据包，导致日后升级不会升级相关依赖</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">sudo apt remove gnome-shell-extension-ubuntu-dock
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="c1"># 撤消更改，使用以下命令安装扩展：</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">sudo apt install gnome-shell-extension-ubuntu-dock
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">sudo apt install ubuntu-desktop --no-install-recommends
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"># 永久禁用</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">gsettings <span class="nb">set</span> org.gnome.shell.extensions.dash-to-dock autohide <span class="nb">false</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">gsettings <span class="nb">set</span> org.gnome.shell.extensions.dash-to-dock dock-fixed <span class="nb">false</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">gsettings <span class="nb">set</span> org.gnome.shell.extensions.dash-to-dock intellihide <span class="nb">false</span>
+</span></span></code></pre></div><blockquote>
+<p>默认字体</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="ln"> 1</span><span class="cl"> <span class="na">open /etc/fonts/conf.d/69-language-selector-zh-cn.conf</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"> <span class="na">增加了Sarasa字体</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"> <span class="na">否则以文泉字体为先</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"> <span class="na">如此设置可同时修复 Matlab 字体问题，完美解决</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"> 
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"> <span class="na">&lt;?xml version</span><span class="o">=</span><span class="s">&#34;1.0&#34;?&gt;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="na">&lt;!DOCTYPE fontconfig SYSTEM &#34;fonts.dtd&#34;&gt;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="na">&lt;fontconfig&gt;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl">	<span class="na">&lt;match target</span><span class="o">=</span><span class="s">&#34;pattern&#34;&gt;
+</span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="s">        &lt;test name=&#34;lang&#34;&gt;
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="s">            &lt;string&gt;zh-cn&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="s">        &lt;/test&gt;
+</span></span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="s">		&lt;test qual=&#34;any&#34; name=&#34;family&#34;&gt;
+</span></span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="s">			&lt;string&gt;serif&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="s">		&lt;/test&gt;
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="s">		&lt;edit name=&#34;family&#34; mode=&#34;prepend&#34; binding=&#34;strong&#34;&gt;
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="s">			&lt;string&gt;Sarasa Gothic SC&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="s">			&lt;string&gt;Noto Serif CJK SC&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="s">			&lt;string&gt;HYSong&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UMing CN&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UMing HK&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="s">			&lt;string&gt;AR PL New Sung&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="s">			&lt;string&gt;WenQuanYi Bitmap Song&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UKai CN&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="s">			&lt;string&gt;AR PL ZenKai Uni&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">27</span><span class="cl"><span class="s">		&lt;/edit&gt;
+</span></span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="s">	&lt;/match&gt; 
+</span></span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="s">	&lt;match target=&#34;pattern&#34;&gt;
+</span></span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="s">		&lt;test qual=&#34;any&#34; name=&#34;family&#34;&gt;
+</span></span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="s">			&lt;string&gt;sans-serif&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="s">		&lt;/test&gt;
+</span></span></span><span class="line"><span class="ln">33</span><span class="cl"><span class="s">        &lt;test name=&#34;lang&#34;&gt;
+</span></span></span><span class="line"><span class="ln">34</span><span class="cl"><span class="s">            &lt;string&gt;zh-cn&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">35</span><span class="cl"><span class="s">        &lt;/test&gt;
+</span></span></span><span class="line"><span class="ln">36</span><span class="cl"><span class="s">		&lt;edit name=&#34;family&#34; mode=&#34;prepend&#34; binding=&#34;strong&#34;&gt;
+</span></span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="s">			&lt;string&gt;Sarasa Gothic SC&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="s">			&lt;string&gt;Noto Sans CJK SC&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="s">			&lt;string&gt;WenQuanYi Zen Hei&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">40</span><span class="cl"><span class="s">			&lt;string&gt;HYSong&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">41</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UMing CN&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">42</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UMing HK&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">43</span><span class="cl"><span class="s">			&lt;string&gt;AR PL New Sung&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">44</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UKai CN&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">45</span><span class="cl"><span class="s">			&lt;string&gt;AR PL ZenKai Uni&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">46</span><span class="cl"><span class="s">		&lt;/edit&gt;
+</span></span></span><span class="line"><span class="ln">47</span><span class="cl"><span class="s">	&lt;/match&gt; 
+</span></span></span><span class="line"><span class="ln">48</span><span class="cl"><span class="s">	&lt;match target=&#34;pattern&#34;&gt;
+</span></span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="s">		&lt;test qual=&#34;any&#34; name=&#34;family&#34;&gt;
+</span></span></span><span class="line"><span class="ln">50</span><span class="cl"><span class="s">			&lt;string&gt;monospace&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">51</span><span class="cl"><span class="s">		&lt;/test&gt;
+</span></span></span><span class="line"><span class="ln">52</span><span class="cl"><span class="s">        &lt;test name=&#34;lang&#34;&gt;
+</span></span></span><span class="line"><span class="ln">53</span><span class="cl"><span class="s">            &lt;string&gt;zh-cn&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">54</span><span class="cl"><span class="s">        &lt;/test&gt;
+</span></span></span><span class="line"><span class="ln">55</span><span class="cl"><span class="s">		&lt;edit name=&#34;family&#34; mode=&#34;prepend&#34; binding=&#34;strong&#34;&gt;
+</span></span></span><span class="line"><span class="ln">56</span><span class="cl"><span class="s">			&lt;string&gt;Sarasa Mono SC&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">57</span><span class="cl"><span class="s">			&lt;string&gt;DejaVu Sans Mono&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">58</span><span class="cl"><span class="s">			&lt;string&gt;Noto Sans Mono CJK SC&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">59</span><span class="cl"><span class="s">			&lt;string&gt;WenQuanYi Zen Hei Mono&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">60</span><span class="cl"><span class="s">			&lt;string&gt;HYSong&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">61</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UMing CN&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">62</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UMing HK&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">63</span><span class="cl"><span class="s">			&lt;string&gt;AR PL New Sung&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">64</span><span class="cl"><span class="s">			&lt;string&gt;AR PL UKai CN&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">65</span><span class="cl"><span class="s">			&lt;string&gt;AR PL ZenKai Uni&lt;/string&gt;
+</span></span></span><span class="line"><span class="ln">66</span><span class="cl"><span class="s">		&lt;/edit&gt;
+</span></span></span><span class="line"><span class="ln">67</span><span class="cl"><span class="s">	&lt;/match&gt; </span>
+</span></span><span class="line"><span class="ln">68</span><span class="cl">
+</span></span><span class="line"><span class="ln">69</span><span class="cl"><span class="na">&lt;/fontconfig&gt;</span>
+</span></span></code></pre></div><blockquote>
+<p>gdm</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln"> 1</span><span class="cl">现在已经成了二进制文件
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">解包操作
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1">#!/bin/sh</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">workdir</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/shell-theme
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">if</span> <span class="o">[</span> ! -d <span class="si">${</span><span class="nv">workdir</span><span class="si">}</span>/theme <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">  mkdir -p <span class="si">${</span><span class="nv">workdir</span><span class="si">}</span>/theme
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="nv">gst</span><span class="o">=</span>/usr/share/gnome-shell/gnome-shell-theme.gresource
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">for</span> r in <span class="sb">`</span>gresource list <span class="nv">$gst</span><span class="sb">`</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        gresource extract <span class="nv">$gst</span> <span class="nv">$r</span> &gt;<span class="nv">$workdir</span>/<span class="si">${</span><span class="nv">r</span><span class="p">#</span><span class="se">\/</span><span class="nv">org</span><span class="se">\/</span><span class="nv">gnome</span><span class="se">\/</span><span class="nv">shell</span><span class="p">/</span><span class="si">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="k">done</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">
+</span></span><span class="line"><span class="ln">14</span><span class="cl">sudo vim /etc/gdm3/greeter.dconf-defaults
+</span></span><span class="line"><span class="ln">15</span><span class="cl">sudo dpkg-reconfigure gdm3
+</span></span></code></pre></div><blockquote>
+<p>Fn 模式</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">For some computer models, to toggle F1 .. F12 keys use media functions or to be the &#34;F&#34; keys press Fn + Esc.
+</span></span></code></pre></div><blockquote>
+<p>CopyQ</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 这程序bug有点多</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">windows安装别勾 gpg 密钥 现在貌似已经修复
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># linux</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"># 开机时候桌面进行缩放设置 copyq无法接收 gnome的设计问题</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">vim ~/.config/autostart/copyq.desktop
+</span></span><span class="line"><span class="ln">6</span><span class="cl">末尾添加
+</span></span><span class="line"><span class="ln">7</span><span class="cl">X-GNOME-Autostart-Delay<span class="o">=</span><span class="m">3</span>
+</span></span></code></pre></div><blockquote>
+<p>idea ibus 无法输入</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="ln">1</span><span class="cl"><span class="na">-Drecreate.x11.input.method</span><span class="o">=</span><span class="s">true</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># 添加到VM配置</span>
+</span></span></code></pre></div><blockquote>
+<p>swap 文件和休眠</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="ln"> 1</span><span class="cl">sudo swapoff -a
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">sudo rm /swapfile
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">sudo fallocate -l 50G /swapfile
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">sudo chmod <span class="m">600</span> /swapfile
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">sudo mkswap /swapfile 
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">mkswap: /swapfile：警告，将擦除旧的 swap 签名。
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">正在设置交换空间版本 1，大小 <span class="o">=</span> <span class="m">50</span> GiB <span class="o">(</span><span class="m">53687087104</span>  个字节<span class="o">)</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">无标签， <span class="nv">UUID</span><span class="o">=</span>0883e286-28c8-4f66-babe-1cd7d203f992
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">sudo swapon /swapfile
+</span></span><span class="line"><span class="ln">12</span><span class="cl">vim /etc/fstab
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"># end add</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="c1"># /swapfile none swap defaults 0 0</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">free                 
+</span></span><span class="line"><span class="ln">16</span><span class="cl">              总计         已用        空闲      共享    缓冲/缓存    可用
+</span></span><span class="line"><span class="ln">17</span><span class="cl">内存：    <span class="m">40490712</span>     <span class="m">2905748</span>    <span class="m">33921688</span>       <span class="m">53424</span>     <span class="m">3663276</span>    <span class="m">36999520</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">交换：    <span class="m">52428796</span>           <span class="m">0</span>    <span class="m">52428796</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl">休眠
+</span></span><span class="line"><span class="ln">21</span><span class="cl">sudo apt install pm-utils hibernate uswsusp
+</span></span><span class="line"><span class="ln">22</span><span class="cl">
+</span></span><span class="line"><span class="ln">23</span><span class="cl">findmnt -no UUID -T /swapfile <span class="o">&amp;&amp;</span> sudo swap-offset /swapfile
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&#34;resume=UUID=ee662add-33cb-483a-ae21-574495e71e41 resume_offset=121970688&#34;</span>
+</span></span></code></pre></div><blockquote>
+<p>fcitx 显示问题</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">首次登录的时候 难以获取缩放值
+</span></span><span class="line"><span class="ln">2</span><span class="cl">导致显示错误 和 copyq 一个问题
+</span></span><span class="line"><span class="ln">3</span><span class="cl">sudo vim ~/.config/fcitx/config
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nv">DelayStart</span><span class="o">=</span><span class="m">5</span>
+</span></span></code></pre></div><blockquote>
+<p>rime 横排显示</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">touch ~/.config/ibus/rime/build/ibus_rime.yaml
+</span></span><span class="line"><span class="ln">2</span><span class="cl">添加内容：
+</span></span><span class="line"><span class="ln">3</span><span class="cl">style:
+</span></span><span class="line"><span class="ln">4</span><span class="cl">   horizontal: <span class="nb">true</span>
+</span></span></code></pre></div><blockquote>
+<p>ibus 字体</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl">字体 ibus tweaker
+</span></span><span class="line"><span class="ln">2</span><span class="cl">卡死问题 不共用 设置里调
+</span></span></code></pre></div><blockquote>
+<p>docker 代理</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="ln">1</span><span class="cl"><span class="gh"># 查看主机名称 代理地址
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="gh"></span>cat /etc/resolv.conf 
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="gh"># ss 打开局域网转发
+</span></span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="gh"># qv2ray 监听 0.0.0.0 全局
+</span></span></span></code></pre></div>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>
+<a class="soc" href="https://github.com/gohugoio/hugo" title="GitHub"><i data-feather="github"></i></a>
+<a class="soc" href="https://www.bilibili.com/" title="bilibili"><i data-feather="tv"></i></a>
+✔️
+      2022  AO 
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

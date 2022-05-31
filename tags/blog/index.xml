@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on 归宅部</title>
+    <link>https://ao2233.xyz/tags/blog/</link>
+    <description>Recent content in blog on 归宅部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>AO</copyright>
+    <lastBuildDate>Thu, 09 Dec 2021 21:13:06 +0000</lastBuildDate><atom:link href="https://ao2233.xyz/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hexo 指南</title>
+      <link>https://ao2233.xyz/posts/hexo%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Thu, 09 Dec 2021 21:13:06 +0000</pubDate>
+      
+      <guid>https://ao2233.xyz/posts/hexo%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/</guid>
+      <description>注意：hexo 过于麻烦，相关替代品 hugo、wordpress。
+ hexo 主体安装
+ 1npm install -g hexo 2# 把hexo加入path 3hexo init blog # 你的网站在本地的目录 4cd blog 5npm install 6hexo server # 服务器部署 或者 本地看效果  Github pages 配置
+  流程很简单，首先安装hexo-deployer-git插件  1# blog 目录下 2npm install hexo-deployer-git --save 修改根目录_config.yml  1deploy: 2type: git 3repo: https://github.com/ao-blog/ao-blog.github.io 4# example, https://github.com/hexojs/hexojs.github.io 5branch: master 67# URL 8## Set your site url here. For example, if you use GitHub Page, set url as &amp;#39;https://username.</description>
+    </item>
+    
+    <item>
+      <title>Web 样式测试</title>
+      <link>https://ao2233.xyz/posts/%E4%B8%BB%E9%A2%98%E7%BC%96%E5%86%99/</link>
+      <pubDate>Tue, 07 Dec 2021 21:13:06 +0000</pubDate>
+      
+      <guid>https://ao2233.xyz/posts/%E4%B8%BB%E9%A2%98%E7%BC%96%E5%86%99/</guid>
+      <description>标题 and (提示栏)
+ 一级标题 二级标题 三级标题 四级标题 五级标题 六级标题 级数越大，间距越大
+   嵌套效果
+    Unicode 😢 漢 字 の 部 首 画 数 読 み 方 筆 順 適 湜 ① 葮 焱 暒 妏
+ φ(*￣0￣) （；´д｀）ゞ
+ code
+ 1// CPP 2#include &amp;lt;iostream&amp;gt;3using namespace std; 4int main(){ 5cout&amp;lt;&amp;lt;&amp;#34;⑨&amp;#34;&amp;lt;&amp;lt;endl; 6return 0; 7}  markdown 标记测试
+ 花Q 斜体 加粗 超链接 Tex -&amp;gt; $\LaTeX$</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+	<title>oh my git - 归宅部</title><link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico /><meta id="viewport" name="viewport">
+
+<script type="text/javascript">
+
+(function(){
+
+  function apply_viewport(){
+    
+
+      var ww = window.screen.width;
+      var mw = 680; 
+      var ratio =  ww / mw; 
+      var viewport_meta_tag = document.getElementById('viewport');
+      if( ww < mw){ 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=' + ratio + ', width=device-width');
+      }
+      else { 
+        viewport_meta_tag.setAttribute('content', 'initial-scale=1.0, width=device-width');
+      }
+    
+  }
+
+  
+  window.addEventListener('resize', function(){
+    apply_viewport();
+  });
+
+  apply_viewport();
+
+}());
+</script>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	<script src="https://ao2233.xyz/js/feather.min.js"></script>
+	
+	
+	
+        <link href="https://ao2233.xyz/css/fonts.css" rel="stylesheet">
+	
+
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ao2233.xyz/css/main.9b8e8a799f6e2e28df142ec99e798c0b6f9ea416e05cd70d7d82c6ac53d3b1c3.css" />
+
+	
+	
+	
+	<link rel="stylesheet" href="https://ao2233.xyz/aplayer/APlayer.min.css" >
+	<script src="https://ao2233.xyz/aplayer/APlayer.min.js"></script>
+	<script src="https://ao2233.xyz/dplayer/DPlayer.min.js"></script>
+	<script src="https://ao2233.xyz/js/pdfobject.min.js"></script>
+
+	<link rel="stylesheet" href="https://ao2233.xyz/js/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://ao2233.xyz/js/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://ao2233.xyz/js/auto-render.min.js" crossorigin="anonymous"  onload="renderMathInElement(document.body);"></script>
+
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			renderMathInElement(document.body, {
+				delimiters: [
+				{left: "$$", right: "$$", display: true},
+				{left: "\\[", right: "\\]", display: true},
+				{left: "$", right: "$", display: false},
+				{left: "\\(", right: "\\)", display: false},
+				
+				
+				
+				
+				
+				]
+			});
+		});
+	</script>
+
+	<script src="https://ao2233.xyz/js/mermaid.min.js"></script>
+		
+		<link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://ao2233.xyz/css/dark.0c347dbf372552c4028878b51c7d5207c1cde76047704ef7935a61ac0a29e7d4.css"media="(prefers-color-scheme: dark)"  />
+		<script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		var config = {
+			startOnLoad:true,
+			flowchart:{
+			useMaxWidth:true,
+			htmlLabels:true,
+			curve:'cardinal',
+			},
+			securityLevel:'loose',
+		};
+		var a=0;
+		function darkModeHandler() {
+			if (mediaQuery.matches) {
+				mermaid.initialize({
+					
+					theme: 'dark',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('深色模式')
+			} else {
+				mermaid.initialize({
+					
+					theme: 'base',
+					config
+				});
+				if (a>0){
+					document.location.reload(false);
+				}
+				a+=1;
+				console.log('浅色模式')
+			}
+		}
+
+		
+		darkModeHandler()
+		
+		mediaQuery.addListener(darkModeHandler)
+
+		</script>
+		
+
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://ao2233.xyz/">归宅部</a>
+		<link rel="icon" type="image/png" href=https://ao2233.xyz/favicon.ico />
+	</div>
+	<nav>
+		
+		<a href="/">Home</a>
+		
+		<a href="/posts">All posts</a>
+		
+		<a href="/about">About</a>
+		
+		<a href="/tags">Tags</a>
+		
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">oh my git</h1>
+			<div class="meta">Posted on Dec 9, 2021</div>
+		</div>
+		
+
+		<section class="body">
+			<h5 id="设置">设置</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl"><span class="c1"># 你的 gitk 会乱码</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">git config --global gui.encoding utf-8
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"># Windows 的奇怪语法</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">git config --global core.editor <span class="s2">&#34;&#39;C:\Program Files\Microsoft VS Code\Code.exe&#39;&#34;</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">
+</span></span><span class="line"><span class="ln">7</span><span class="cl">git config --global user.email <span class="s2">&#34;test@outlook.com&#34;</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">git config --global user.user <span class="s2">&#34;ao&#34;</span>
+</span></span></code></pre></div><h5 id="git-流程">git 流程</h5>
+<ol>
+<li>新建 init，add 后提交</li>
+<li>之后每次修改 先在工作区做，做完add到暂存区，确认之后commit</li>
+<li>实际上工作区和暂存区是双保险，有的软件每次修改就add。</li>
+</ol>
+<h5 id="git-的结构">git 的结构</h5>
+<p><code>工作区</code> 做修改 或者 <code>add</code>到暂存区 (显示AM add、modified 已添加/修改)</p>
+<p><code>暂存区</code> 记录标记了的文件的状态，有AMD三种，add-&gt;添加、modified-&gt;已经改动、delete-&gt;删除</p>
+<p><code>版本区</code> 提交之后的区域</p>
+<p><code>track</code>是否追踪某文件，<code>git add</code>会添加文件到追踪。（<code>git clone</code>后，自动全部追踪）</p>
+<ol>
+<li><code>工作区</code>中的文件，<code>track</code>后就进入了暂存区。进入了git的管理范畴。</li>
+<li><code>暂存区</code>选择追踪之后，记录的修改过的文件，全部算作在暂存区中。</li>
+<li><code>版本区</code>提交<code>git commit</code>之后，进入版本区</li>
+</ol>
+<h5 id="特殊操作">特殊操作</h5>
+<ol>
+<li>
+<p><code>.gitignore</code>选择忽略的文件（正则匹配 + \文件夹名\），这样<code>git add * (或者 git add .)</code>会自动忽略</p>
+</li>
+<li>
+<p><code>git rm</code>操作，git对待删除操作非常慎重</p>
+<p>文件也删除（从文件和接下来的版本中删除<code>a.cpp</code>）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">rm a.cpp
+</span></span><span class="line"><span class="ln">2</span><span class="cl">git rm a.cpp
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># git rm -f a.cpp</span>
+</span></span></code></pre></div><p>仅仅以后都不追踪</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">git rm a.cpp --cache
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># 这个不适用于你不小心加入了一些不要的文件！！</span>
+</span></span></code></pre></div></li>
+<li>
+<p><code>git reset</code>重置操作</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">1. git reset <span class="c1"># 抛弃 add 的操作</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">2. git reset HEAD 文件名
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"># 2 是一个危险操作，如果你新建一个空文件夹，然后把代码加入到暂存区，reset --hard后，暂存区所有的代码都将会消失！add 的内容也会消失。</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">3. git reset --hard <span class="c1"># 连同工作区，暂存区，全部还原到之前的版本</span>
+</span></span></code></pre></div><ol start="4">
+<li>
+<p><code>git 信息 </code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">git config --list
+</span></span><span class="line"><span class="ln">2</span><span class="cl">git status -s
+</span></span><span class="line"><span class="ln">3</span><span class="cl">git --help
+</span></span></code></pre></div></li>
+<li>
+<p><code>git clean</code></p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln"> 1</span><span class="cl">git clean -h
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="c1"># 用于删除未标记的文件(夹)和忽略的文件</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">usage: git clean <span class="o">[</span>-d<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-i<span class="o">]</span> <span class="o">[</span>-n<span class="o">]</span> <span class="o">[</span>-q<span class="o">]</span> <span class="o">[</span>-e &lt;pattern&gt;<span class="o">]</span> <span class="o">[</span>-x <span class="p">|</span> -X<span class="o">]</span> <span class="o">[</span>--<span class="o">]</span> &lt;paths&gt;...
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    -q, --quiet           <span class="k">do</span> not print names of files removed
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    -n, --dry-run         dry run
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    -f, --force           force
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    -i, --interactive     interactive cleaning
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    -d                    删除整个文件夹（未标记的）
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    -e, --exclude &lt;pattern&gt;
+</span></span><span class="line"><span class="ln">11</span><span class="cl">                          add &lt;pattern&gt; to ignore rules
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    -x                    同时也删除ignored文件
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    -X                    仅删除ignored文件
+</span></span></code></pre></div><ol start="6">
+<li><code>git restore</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">git restore &lt;filename&gt; <span class="c1"># 抛弃工作区，恢复到暂存区，（当你感觉做了很多就add到暂存区，每步存一下），没有暂存区就恢复到之前的提交</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="c1"># 此时 暂存区是保留的！同 git checkout &lt;filename&gt;</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c1"># git-restore - Restore working tree files</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">
+</span></span><span class="line"><span class="ln">5</span><span class="cl">git checkout 过于复杂，现在已拆分为 git restore 和 git switch
+</span></span></code></pre></div><ol start="7">
+<li><code>git gc</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">当删除了无用的文件时，.git文件夹不会自动清除文件。
+</span></span><span class="line"><span class="ln">2</span><span class="cl">git gc --prune<span class="o">=</span>now
+</span></span><span class="line"><span class="ln">3</span><span class="cl">用于清理多余的.git信息
+</span></span></code></pre></div>
+		</section>
+
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr>
+<a class="soc" href="https://github.com/gohugoio/hugo" title="GitHub"><i data-feather="github"></i></a>
+<a class="soc" href="https://www.bilibili.com/" title="bilibili"><i data-feather="tv"></i></a>
+✔️
+      2022  AO 
+</footer>
+
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

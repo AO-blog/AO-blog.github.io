@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 归宅部</title>
+    <link>https://ao2233.xyz/tags/</link>
+    <description>Recent content in Tags on 归宅部</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>AO</copyright>
+    <lastBuildDate>Wed, 05 Jan 2022 19:52:31 +0800</lastBuildDate><atom:link href="https://ao2233.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://ao2233.xyz/tags/linux/</link>
+      <pubDate>Wed, 05 Jan 2022 19:52:31 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>其他</title>
+      <link>https://ao2233.xyz/tags/%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Sun, 02 Jan 2022 08:41:46 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/tags/%E5%85%B6%E4%BB%96/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://ao2233.xyz/tags/windows/</link>
+      <pubDate>Sun, 19 Dec 2021 19:12:01 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>动画安利</title>
+      <link>https://ao2233.xyz/tags/%E5%8A%A8%E7%94%BB%E5%AE%89%E5%88%A9/</link>
+      <pubDate>Fri, 10 Dec 2021 16:10:36 +0800</pubDate>
+      
+      <guid>https://ao2233.xyz/tags/%E5%8A%A8%E7%94%BB%E5%AE%89%E5%88%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>blog</title>
+      <link>https://ao2233.xyz/tags/blog/</link>
+      <pubDate>Thu, 09 Dec 2021 21:13:06 +0000</pubDate>
+      
+      <guid>https://ao2233.xyz/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
