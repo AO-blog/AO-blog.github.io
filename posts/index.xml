@@ -17,8 +17,8 @@
       <description>祝你生日快乐！
 即使市教委的小马走失了，即使前路依旧黑暗，即使不如意事常八九,可与人言无二三，
 也不妨碍今天是个开心的日子👀
- 谜之选择
- A. 妙趣横生的老头环与宫崎老贼
+谜之选择
+A. 妙趣横生的老头环与宫崎老贼
 B. 治愈人心的GalGame
 C. 养生种田的咲稻姬
 D. 你跟我说这些 我也不懂啊 -&amp;gt; 271
@@ -43,8 +43,7 @@ E. 其他
       <guid>https://ao2233.xyz/posts/mingw-w64/</guid>
       <description>Mingw-w64项目包含对GCC、GNU Binutils的Windows版本的移植（汇编器、链接器、库文件管理器），一套自由可分发的Windows特定的头文件与静态导入库以使用Windows API，一个Windows本地版本的GNU的调试器，以及其它多种工具。
 维护着一个类似于pthreads-win32的winpthreads包装库（libwinpthread）, 实现了C++11线程库&amp;lt;thread&amp;gt;, &amp;lt;future&amp;gt;, &amp;lt;mutex&amp;gt;。
-各种版本 1MinGW64/32 msvcrt libstdc++ gcc 23UCRT64 UCRT libstdc++ gcc 45CLANG64 UCRT libc++ clang 
-MSVCRT (Microsoft Visual C++ Runtime) is available by default on all Microsoft Windows versions, but due to backwards compatibility issues is stuck in the past, not C99 compatible and is missing some features.Binaries linked with MSVCRT should not be mixed with UCRT ones because the internal structures and data types are different.</description>
+各种版本 1MinGW64/32 msvcrt libstdc++ gcc 2 3UCRT64 UCRT libstdc++ gcc 4 5CLANG64 UCRT libc++ clang MSVCRT (Microsoft Visual C++ Runtime) is available by default on all Microsoft Windows versions, but due to backwards compatibility issues is stuck in the past, not C99 compatible and is missing some features.Binaries linked with MSVCRT should not be mixed with UCRT ones because the internal structures and data types are different.</description>
     </item>
     
     <item>
@@ -54,7 +53,7 @@ MSVCRT (Microsoft Visual C++ Runtime) is available by default on all Microsoft W
       
       <guid>https://ao2233.xyz/posts/torch.autograd/</guid>
       <description>一般情况
- $$ {\rm X}=\left[x_1,x_2,x_3,x_4\right]\\ {\rm Y}=\left[y_1,y_2,y_3\right]\\ y_1=f_1(x_1,x_2,x_3,x_4)\\ y_2=f_2(x_1,x_2,x_3,x_4)\\ y_3=f_3(x_1,x_2,x_3,x_4)\\ J=\left( \begin{matrix} \frac{\partial y_1}{\partial x_1} &amp;amp; \frac{\partial y_1}{\partial x_2} &amp;amp; \frac{\partial y_1}{\partial x_3} &amp;amp; \frac{\partial y_1}{\partial x_4}\\ \frac{\partial y_2}{\partial x_1} &amp;amp; \frac{\partial y_2}{\partial x_2} &amp;amp; \frac{\partial y_2}{\partial x_3} &amp;amp; \frac{\partial y_2}{\partial x_4}\\ \frac{\partial y_3}{\partial x_1} &amp;amp; \frac{\partial y_3}{\partial x_2} &amp;amp; \frac{\partial y_3}{\partial x_3} &amp;amp; \frac{\partial y_3}{\partial x_4}\\ \end{matrix} \right) \\ V=\left[v_1,v_2,v_3\right] $$
+$$ {\rm X}=\left[x_1,x_2,x_3,x_4\right]\\ {\rm Y}=\left[y_1,y_2,y_3\right]\\ y_1=f_1(x_1,x_2,x_3,x_4)\\ y_2=f_2(x_1,x_2,x_3,x_4)\\ y_3=f_3(x_1,x_2,x_3,x_4)\\ J=\left( \begin{matrix} \frac{\partial y_1}{\partial x_1} &amp;amp; \frac{\partial y_1}{\partial x_2} &amp;amp; \frac{\partial y_1}{\partial x_3} &amp;amp; \frac{\partial y_1}{\partial x_4}\\ \frac{\partial y_2}{\partial x_1} &amp;amp; \frac{\partial y_2}{\partial x_2} &amp;amp; \frac{\partial y_2}{\partial x_3} &amp;amp; \frac{\partial y_2}{\partial x_4}\\ \frac{\partial y_3}{\partial x_1} &amp;amp; \frac{\partial y_3}{\partial x_2} &amp;amp; \frac{\partial y_3}{\partial x_3} &amp;amp; \frac{\partial y_3}{\partial x_4}\\ \end{matrix} \right) \\ V=\left[v_1,v_2,v_3\right] $$
 对于Y.backward(vector)，len(ventor) = len(output) = 3，x_n.grad = sum(v_n*偏导数), n = [1, len(input)] $$ {\bf torch.</description>
     </item>
     
@@ -64,11 +63,11 @@ MSVCRT (Microsoft Visual C++ Runtime) is available by default on all Microsoft W
       <pubDate>Wed, 05 Jan 2022 19:52:31 +0800</pubDate>
       
       <guid>https://ao2233.xyz/posts/arch/</guid>
-      <description>arch的优势  内核最新，有助于解决各种硬件适配问题 不用自己打包，手动编译，比如mpv-full的vapoursynth模块依赖，或 cuda or cudnn 等等 安装包的速度快，全方面定制 各发行版中最方便的，就长期使用而言应该是最省心的  可能的问题  稳定性待考查，只能最新包，可能产生兼容问题 安装对比图形界面而言还是较为繁琐（但是此时间与手动编译ffmpeg-full的时间相比，不值一提） 如果只是编译机或者服务器，建议ubuntu或者debian 不管如何兼容软件不如Windows，无论是gnome还是KDE，均存在大量bug，xorg老牛拉破车 systemed滚挂了  USB的准备 建议使用ventoy
+      <description>arch的优势 内核最新，有助于解决各种硬件适配问题 不用自己打包，手动编译，比如mpv-full的vapoursynth模块依赖，或 cuda or cudnn 等等 安装包的速度快，全方面定制 各发行版中最方便的，就长期使用而言应该是最省心的 可能的问题 稳定性待考查，只能最新包，可能产生兼容问题 安装对比图形界面而言还是较为繁琐（但是此时间与手动编译ffmpeg-full的时间相比，不值一提） 如果只是编译机或者服务器，建议ubuntu或者debian 不管如何兼容软件不如Windows，无论是gnome还是KDE，均存在大量bug，xorg老牛拉破车 systemed滚挂了 USB的准备 建议使用ventoy
 下载arch的镜像
-安装  联网 &amp;amp; 镜像设置
- 1iwctl 2device list 3station wlan0 scan 4station wlan0 get-networks 5station wlan0 connect wifi_name 6# 仅仅支持非特殊字符的wifi 7vim /etc/pacman.d/mirrorlist 8# Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch 9# Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch 10pacman -Syy  分区
- 1# nvme固态通常叫nvme，其余通常叫sda。看总线接口。 2cfdisk /dev/nvme0n1 3# 图形化分区 4mkfs.ext4 /dev/nvme0n1px 5# 仅仅单系统时使用，efi分区重建，但是这样建议直接arch_install脚本 6mkfs.fat -F 32 /dev/nvme0n1p1 7# 当然可以选择其他便于拓展的格式 8mount /dev/nvme0n1px /mnt 9#对16G以上的系统不建议swap硬分区，直接swap文件即可。设置大小&amp;gt;1xRAM。 10mkdir /mnt/efi 11mount /dev/nvme0n1p1 /mnt/efi # 把efi分区挂到efi下  安装</description>
+安装 联网 &amp;amp; 镜像设置
+1iwctl 2device list 3station wlan0 scan 4station wlan0 get-networks 5station wlan0 connect wifi_name 6# 仅仅支持非特殊字符的wifi 7vim /etc/pacman.d/mirrorlist 8# Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch 9# Server = https://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch 10pacman -Syy 分区
+1# nvme固态通常叫nvme，其余通常叫sda。看总线接口。 2cfdisk /dev/nvme0n1 3# 图形化分区 4mkfs.ext4 /dev/nvme0n1px 5# 仅仅单系统时使用，efi分区重建，但是这样建议直接arch_install脚本 6mkfs.fat -F 32 /dev/nvme0n1p1 7# 当然可以选择其他便于拓展的格式 8mount /dev/nvme0n1px /mnt 9#对16G以上的系统不建议swap硬分区，直接swap文件即可。设置大小&amp;gt;1xRAM。 10mkdir /mnt/efi 11mount /dev/nvme0n1p1 /mnt/efi # 把efi分区挂到efi下 安装</description>
     </item>
     
     <item>
@@ -77,11 +76,10 @@ MSVCRT (Microsoft Visual C++ Runtime) is available by default on all Microsoft W
       <pubDate>Sun, 02 Jan 2022 08:41:46 +0800</pubDate>
       
       <guid>https://ao2233.xyz/posts/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%B8%8E%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
-      <description>示例文件  fun.h
- 1#include &amp;lt;iostream&amp;gt;2void say(); 34int add(int s); 56class ao{ 7public: 8int year = 2022; 9void print(); 10};  fun.cpp
- 1#include &amp;#34;fun.h&amp;#34;2void say(){ 3printf(&amp;#34;happy new year&amp;#34;); 4} 56int add(int s){ 7return s+1; 8} 910void ao::print(){ 11std::cout&amp;lt;&amp;lt;&amp;#34;it&amp;#39;s &amp;#34;&amp;lt;&amp;lt;year&amp;lt;&amp;lt;&amp;#34;now!&amp;#34;&amp;lt;&amp;lt;std::endl; 12}  main.cpp
- 1#include &amp;lt;iostream&amp;gt;2#include &amp;#34;fun.h&amp;#34;3using namespace std; 4int main(){ 5ao *i=new ao(); 6cout &amp;lt;&amp;lt; i-&amp;gt;year &amp;lt;&amp;lt; endl; 7i-&amp;gt;print(); 8i-&amp;gt;year=add(i-&amp;gt;year); 9i-&amp;gt;print(); 10say(); 11} 动态库  动态库生成
- 1# -fPIC 表示使用相对地址 2g++ fun.</description>
+      <description>示例文件 fun.h
+1#include &amp;lt;iostream&amp;gt; 2void say(); 3 4int add(int s); 5 6class ao{ 7public: 8 int year = 2022; 9 void print(); 10}; fun.cpp
+1#include &amp;#34;fun.h&amp;#34; 2void say(){ 3 printf(&amp;#34;happy new year&amp;#34;); 4} 5 6int add(int s){ 7 return s+1; 8} 9 10void ao::print(){ 11 std::cout&amp;lt;&amp;lt;&amp;#34;it&amp;#39;s &amp;#34;&amp;lt;&amp;lt;year&amp;lt;&amp;lt;&amp;#34;now!&amp;#34;&amp;lt;&amp;lt;std::endl; 12} main.cpp
+1#include &amp;lt;iostream&amp;gt; 2#include &amp;#34;fun.h&amp;#34; 3using namespace std; 4int main(){ 5 ao *i=new ao(); 6 cout &amp;lt;&amp;lt; i-&amp;gt;year &amp;lt;&amp;lt; endl; 7 i-&amp;gt;print(); 8 i-&amp;gt;year=add(i-&amp;gt;year); 9 i-&amp;gt;print(); 10 say(); 11} 动态库 动态库生成</description>
     </item>
     
     <item>
@@ -91,9 +89,9 @@ MSVCRT (Microsoft Visual C++ Runtime) is available by default on all Microsoft W
       
       <guid>https://ao2233.xyz/posts/cmake%E6%8C%87%E5%8D%97/</guid>
       <description>CMake 基本结构
- 1# 设置cmake最低版本 2cmake_minimum_required(VERSION 3.5)3# 工程名称 4project (hello_headers)5# 设置变量或者别名 6set(SOURCE src)	# 引用方式 ${name} 7# 遍历文件 8file(GLOB LIB_FILE src/lib/*c)	# 将所有.c*的文件作为LIB_FILE 9file(GLOB_RECURSE src/lib/*c) # 在lib文件夹下递归寻找.c*文件作为LIB_FILE 10# 引入头文件库 11# 设置链接库 12# 设置生成文件 13# 设置编译FLAG  引入头文件库
- 1include_directories(目录) # 为所有目标引入 2target_include_directories(目标名称 属性 目录) # 为特定目标引入 34# 1 在 add_excutable() 前引入 5# 2 在 add_excutable() 后引入  引入链接库
- 1# 如果不引入add_library() 那么在add_excutable()时 需要将用到的文件全部加入到其中 2add_executable(hello_headers src/main.cpp src/Hello.cpp)34# 创建链接库 5add_library(新建的链接库名字 动态or静态 包含的文件)6# 引入链接库 7target_link_libraries(目标 属性 库名)8link_libraries(属性 库名)910# 1 在 add_excutable() 前引入 11# 2 在 add_excutable() 后引入  设置生成文件</description>
+1# 设置cmake最低版本 2cmake_minimum_required(VERSION 3.5) 3# 工程名称 4project (hello_headers) 5# 设置变量或者别名 6set(SOURCE src)	# 引用方式 ${name} 7# 遍历文件 8file(GLOB LIB_FILE src/lib/*c)	# 将所有.c*的文件作为LIB_FILE 9file(GLOB_RECURSE src/lib/*c) # 在lib文件夹下递归寻找.c*文件作为LIB_FILE 10# 引入头文件库 11# 设置链接库 12# 设置生成文件 13# 设置编译FLAG 引入头文件库
+1include_directories(目录) # 为所有目标引入 2target_include_directories(目标名称 属性 目录) # 为特定目标引入 3 4# 1 在 add_excutable() 前引入 5# 2 在 add_excutable() 后引入 引入链接库
+1# 如果不引入add_library() 那么在add_excutable()时 需要将用到的文件全部加入到其中 2add_executable(hello_headers src/main.cpp src/Hello.cpp) 3 4# 创建链接库 5add_library(新建的链接库名字 动态or静态 包含的文件) 6# 引入链接库 7target_link_libraries(目标 属性 库名) 8link_libraries(属性 库名) 9 10# 1 在 add_excutable() 前引入 11# 2 在 add_excutable() 后引入 设置生成文件</description>
     </item>
     
     <item>
@@ -104,10 +102,10 @@ MSVCRT (Microsoft Visual C++ Runtime) is available by default on all Microsoft W
       <guid>https://ao2233.xyz/posts/windows-active/</guid>
       <description>Windows KMS 策略 vlmcsd
 docker-vlmcsd
- 服务器（推荐 docker or WSL）
- Key
-1$ which windows-active 2windows-active: aliased to /home/ao/kms/binaries/Linux/intel/static/vlmcsd-x64-musl-static 34$ which windows-active-test 5windows-active-test: aliased to /home/ao/kms/binaries/Linux/intel/static/vlmcs-x64-musl-static  客户端
- 1#requires -runasadministrator 2[cmdletbinding()] 3param( 4[Parameter(Position = 1, Mandatory = $true, HelpMessage=&amp;#39;set WSL IP,default port 1688,Run as Admin&amp;#39;)] 5[String] 6$ip 7) 8# 删除激活信息 9# slmgr.vbs -upk;  10# 专业工作站 key 11# slmgr.vbs -ipk NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J; 12# 企业版 key 13# slmgr.vbs -ipk NPPR9-FWDCX-D2C8J-H872K-2YT43; 14slmgr.vbs -skms $ip; 15slmgr.</description>
+服务器（推荐 docker or WSL）
+Key
+1$ which windows-active 2windows-active: aliased to /home/ao/kms/binaries/Linux/intel/static/vlmcsd-x64-musl-static 3 4$ which windows-active-test 5windows-active-test: aliased to /home/ao/kms/binaries/Linux/intel/static/vlmcs-x64-musl-static 客户端
+1#requires -runasadministrator 2[cmdletbinding()] 3param( 4 [Parameter(Position = 1, Mandatory = $true, HelpMessage=&amp;#39;set WSL IP,default port 1688,Run as Admin&amp;#39;)] 5 [String] 6 $ip 7) 8# 删除激活信息 9# slmgr.vbs -upk; 10# 专业工作站 key 11# slmgr.vbs -ipk NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J; 12# 企业版 key 13# slmgr.vbs -ipk NPPR9-FWDCX-D2C8J-H872K-2YT43; 14slmgr.vbs -skms $ip; 15slmgr.</description>
     </item>
     
     <item>
@@ -117,11 +115,11 @@ docker-vlmcsd
       
       <guid>https://ao2233.xyz/posts/%E8%A7%A3%E9%99%A4%E5%8D%A0%E7%94%A8/</guid>
       <description>Windows常见占用
- 文件被使用，无法进行移动删除操作。  a. 资源管理器，句柄查找，结束进程即可。
+文件被使用，无法进行移动删除操作。 a. 资源管理器，句柄查找，结束进程即可。
 b. Process Explorer 库与句柄查找
-移动设备被占用，无法进行插拔操作。  事件查看器，查看占用资源的进程即可。
-端口占用  HyperV有大量保留端口，可能会与IDEA等软件发生冲突。也有可能代理软件进程重复运行或者占用了常用端口导致。
-1netstat -aon | findstr &amp;#34;{port_id}&amp;#34; 2# kill 即可 3# for IDEA 4sudo net stop winnat; # issue 讨论的解决方案，可能会使WSL无网络 5sudo net start winnat; 6# 查看端口情况 7netsh interface ipv4 show excludedportrange protocol=tcp 8netsh int ipv4 show dynamicport tcp </description>
+移动设备被占用，无法进行插拔操作。 事件查看器，查看占用资源的进程即可。
+端口占用 HyperV有大量保留端口，可能会与IDEA等软件发生冲突。也有可能代理软件进程重复运行或者占用了常用端口导致。
+1netstat -aon | findstr &amp;#34;{port_id}&amp;#34; 2# kill 即可 3# for IDEA 4sudo net stop winnat; # issue 讨论的解决方案，可能会使WSL无网络 5sudo net start winnat; 6# 查看端口情况 7 netsh interface ipv4 show excludedportrange protocol=tcp 8 netsh int ipv4 show dynamicport tcp </description>
     </item>
     
     <item>
@@ -130,7 +128,7 @@ b. Process Explorer 库与句柄查找
       <pubDate>Fri, 10 Dec 2021 16:10:36 +0800</pubDate>
       
       <guid>https://ao2233.xyz/posts/%E5%8A%A8%E7%94%BB%E5%AE%89%E5%88%A91/</guid>
-      <description>《漂流少年》是由MADHOUSE制作、以科幻为题材的日本原创电视动画作品。2021年7月15日开始在TOKYO MX放送。官方口号是“SF青春群像剧”。 希和长良 烂尾警告!!（史诗级牛头人巨作）  .aspect-ratio { position: relative; width: 100%; height: 0; padding-bottom: 75%; } .aspect-ratio iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; }    </description>
+      <description>《漂流少年》是由MADHOUSE制作、以科幻为题材的日本原创电视动画作品。2021年7月15日开始在TOKYO MX放送。官方口号是“SF青春群像剧”。 希和长良 烂尾警告!!（史诗级牛头人巨作） </description>
     </item>
     
     <item>
@@ -140,9 +138,9 @@ b. Process Explorer 库与句柄查找
       
       <guid>https://ao2233.xyz/posts/hexo%E7%AE%80%E5%8D%95%E6%95%99%E7%A8%8B/</guid>
       <description>注意：hexo 过于麻烦，相关替代品 hugo、wordpress。
- hexo 主体安装
- 1npm install -g hexo 2# 把hexo加入path 3hexo init blog # 你的网站在本地的目录 4cd blog 5npm install 6hexo server # 服务器部署 或者 本地看效果  Github pages 配置
-  流程很简单，首先安装hexo-deployer-git插件  1# blog 目录下 2npm install hexo-deployer-git --save 修改根目录_config.yml  1deploy: 2type: git 3repo: https://github.com/ao-blog/ao-blog.github.io 4# example, https://github.com/hexojs/hexojs.github.io 5branch: master 67# URL 8## Set your site url here. For example, if you use GitHub Page, set url as &amp;#39;https://username.</description>
+hexo 主体安装
+1npm install -g hexo 2# 把hexo加入path 3hexo init blog # 你的网站在本地的目录 4cd blog 5npm install 6hexo server # 服务器部署 或者 本地看效果 Github pages 配置
+流程很简单，首先安装hexo-deployer-git插件 1# blog 目录下 2npm install hexo-deployer-git --save 修改根目录_config.yml 1deploy: 2 type: git 3 repo: https://github.com/ao-blog/ao-blog.github.io 4 # example, https://github.com/hexojs/hexojs.github.io 5 branch: master 6 7# URL 8## Set your site url here. For example, if you use GitHub Page, set url as &amp;#39;https://username.</description>
     </item>
     
     <item>
@@ -152,7 +150,7 @@ b. Process Explorer 库与句柄查找
       
       <guid>https://ao2233.xyz/posts/ubuntu/</guid>
       <description>Grub
- 1png 只能8位 2jpg 无所谓 3./install.sh 45sudo vim /etc/default/grub 6GRUB_THEME=&amp;#34;/usr/share/grub/themes/Tela/theme.txt&amp;#34; 7update-grub 89主题路径 10/usr/share/grub/themes/Tela 1112字体问题 13制作字体 14sudo grub-mkfont &amp;#39;/home/ao/下载/sarasa-ui-sc-regular.ttf&amp;#39; -o sarasa_22.pf2 -s 22 -v 15替换  16theme.txt 1718# Show a countdown message using the label component 19+ label { 20top = 82% 21left = 32% 22width = 30% 23align = &amp;#34;center&amp;#34; 24id = &amp;#34;__timeout__&amp;#34; 25text = &amp;#34;少女祈祷中... %d\n请选择...&amp;#34; 26color = &amp;#34;#cccccc&amp;#34; 27font = &amp;#34;Sarasa UI SC Regular 26&amp;#34; 28}  硬件监控</description>
+1png 只能8位 2jpg 无所谓 3./install.sh 4 5sudo vim /etc/default/grub 6GRUB_THEME=&amp;#34;/usr/share/grub/themes/Tela/theme.txt&amp;#34; 7update-grub 8 9主题路径 10/usr/share/grub/themes/Tela 11 12字体问题 13制作字体 14sudo grub-mkfont &amp;#39;/home/ao/下载/sarasa-ui-sc-regular.ttf&amp;#39; -o sarasa_22.pf2 -s 22 -v 15替换 16theme.txt 17 18# Show a countdown message using the label component 19+ label { 20 top = 82% 21 left = 32% 22 width = 30% 23 align = &amp;#34;center&amp;#34; 24 id = &amp;#34;__timeout__&amp;#34; 25 text = &amp;#34;少女祈祷中... %d\n请选择...&amp;#34; 26 color = &amp;#34;#cccccc&amp;#34; 27 font = &amp;#34;Sarasa UI SC Regular 26&amp;#34; 28} 硬件监控</description>
     </item>
     
     <item>
@@ -161,11 +159,11 @@ b. Process Explorer 库与句柄查找
       <pubDate>Thu, 09 Dec 2021 21:13:06 +0000</pubDate>
       
       <guid>https://ao2233.xyz/posts/oh-my-git/</guid>
-      <description>设置 1# 你的 gitk 会乱码 2git config --global gui.encoding utf-8 34# Windows 的奇怪语法 5git config --global core.editor &amp;#34;&amp;#39;C:\Program Files\Microsoft VS Code\Code.exe&amp;#39;&amp;#34; 67git config --global user.email &amp;#34;test@outlook.com&amp;#34; 8git config --global user.user &amp;#34;ao&amp;#34; git 流程  新建 init，add 后提交 之后每次修改 先在工作区做，做完add到暂存区，确认之后commit 实际上工作区和暂存区是双保险，有的软件每次修改就add。  git 的结构 工作区 做修改 或者 add到暂存区 (显示AM add、modified 已添加/修改)
+      <description>设置 1# 你的 gitk 会乱码 2git config --global gui.encoding utf-8 3 4# Windows 的奇怪语法 5git config --global core.editor &amp;#34;&amp;#39;C:\Program Files\Microsoft VS Code\Code.exe&amp;#39;&amp;#34; 6 7git config --global user.email &amp;#34;test@outlook.com&amp;#34; 8git config --global user.user &amp;#34;ao&amp;#34; git 流程 新建 init，add 后提交 之后每次修改 先在工作区做，做完add到暂存区，确认之后commit 实际上工作区和暂存区是双保险，有的软件每次修改就add。 git 的结构 工作区 做修改 或者 add到暂存区 (显示AM add、modified 已添加/修改)
 暂存区 记录标记了的文件的状态，有AMD三种，add-&amp;gt;添加、modified-&amp;gt;已经改动、delete-&amp;gt;删除
 版本区 提交之后的区域
 track是否追踪某文件，git add会添加文件到追踪。（git clone后，自动全部追踪）
- 工作区中的文件，track后就进入了暂存区。进入了git的管理范畴。 暂存区选择追踪之后，记录的修改过的文件，全部算作在暂存区中。 版本区提交git commit之后，进入版本区  特殊操作   .gitignore选择忽略的文件（正则匹配 + \文件夹名\），这样git add * (或者 git add .</description>
+工作区中的文件，track后就进入了暂存区。进入了git的管理范畴。 暂存区选择追踪之后，记录的修改过的文件，全部算作在暂存区中。 版本区提交git commit之后，进入版本区 特殊操作 .gitignore选择忽略的文件（正则匹配 + \文件夹名\），这样git add * (或者 git add .</description>
     </item>
     
     <item>
@@ -175,13 +173,15 @@ track是否追踪某文件，git add会添加文件到追踪。（git clone后�
       
       <guid>https://ao2233.xyz/posts/%E4%B8%BB%E9%A2%98%E7%BC%96%E5%86%99/</guid>
       <description>标题 and (提示栏)
- 一级标题 二级标题 三级标题 四级标题 五级标题 六级标题 级数越大，间距越大
-   嵌套效果
-    Unicode 😢 漢 字 の 部 首 画 数 読 み 方 筆 順 適 湜 ① 葮 焱 暒 妏
- φ(*￣0￣) （；´д｀）ゞ
- code
- 1// CPP 2#include &amp;lt;iostream&amp;gt;3using namespace std; 4int main(){ 5cout&amp;lt;&amp;lt;&amp;#34;⑨&amp;#34;&amp;lt;&amp;lt;endl; 6return 0; 7}  markdown 标记测试
- 花Q 斜体 加粗 超链接 Tex -&amp;gt; $\LaTeX$</description>
+一级标题 二级标题 三级标题 四级标题 五级标题 六级标题 级数越大，间距越大
+嵌套效果
+Unicode 😢 漢 字 の 部 首 画 数 読 み 方 筆 順 適 湜 ① 葮 焱 暒 妏
+φ(*￣0￣) （；´д｀）ゞ
+code
+1// CPP 2#include &amp;lt;iostream&amp;gt; 3using namespace std; 4int main(){ 5	cout&amp;lt;&amp;lt;&amp;#34;⑨&amp;#34;&amp;lt;&amp;lt;endl; 6	return 0; 7} markdown 标记测试
+花Q 斜体 加粗 超链接 Tex -&amp;gt; $\LaTeX$
+id name level 0 ao 99 特殊样式
+Aplayer 1{/{&amp;lt; aplayer id=2 url=https://ao2233.xyz/media/atest.</description>
     </item>
     
   </channel>

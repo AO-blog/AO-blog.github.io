@@ -14,11 +14,10 @@
       <pubDate>Sun, 02 Jan 2022 08:41:46 +0800</pubDate>
       
       <guid>https://ao2233.xyz/posts/%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%B8%8E%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93/</guid>
-      <description>示例文件  fun.h
- 1#include &amp;lt;iostream&amp;gt;2void say(); 34int add(int s); 56class ao{ 7public: 8int year = 2022; 9void print(); 10};  fun.cpp
- 1#include &amp;#34;fun.h&amp;#34;2void say(){ 3printf(&amp;#34;happy new year&amp;#34;); 4} 56int add(int s){ 7return s+1; 8} 910void ao::print(){ 11std::cout&amp;lt;&amp;lt;&amp;#34;it&amp;#39;s &amp;#34;&amp;lt;&amp;lt;year&amp;lt;&amp;lt;&amp;#34;now!&amp;#34;&amp;lt;&amp;lt;std::endl; 12}  main.cpp
- 1#include &amp;lt;iostream&amp;gt;2#include &amp;#34;fun.h&amp;#34;3using namespace std; 4int main(){ 5ao *i=new ao(); 6cout &amp;lt;&amp;lt; i-&amp;gt;year &amp;lt;&amp;lt; endl; 7i-&amp;gt;print(); 8i-&amp;gt;year=add(i-&amp;gt;year); 9i-&amp;gt;print(); 10say(); 11} 动态库  动态库生成
- 1# -fPIC 表示使用相对地址 2g++ fun.</description>
+      <description>示例文件 fun.h
+1#include &amp;lt;iostream&amp;gt; 2void say(); 3 4int add(int s); 5 6class ao{ 7public: 8 int year = 2022; 9 void print(); 10}; fun.cpp
+1#include &amp;#34;fun.h&amp;#34; 2void say(){ 3 printf(&amp;#34;happy new year&amp;#34;); 4} 5 6int add(int s){ 7 return s+1; 8} 9 10void ao::print(){ 11 std::cout&amp;lt;&amp;lt;&amp;#34;it&amp;#39;s &amp;#34;&amp;lt;&amp;lt;year&amp;lt;&amp;lt;&amp;#34;now!&amp;#34;&amp;lt;&amp;lt;std::endl; 12} main.cpp
+1#include &amp;lt;iostream&amp;gt; 2#include &amp;#34;fun.h&amp;#34; 3using namespace std; 4int main(){ 5 ao *i=new ao(); 6 cout &amp;lt;&amp;lt; i-&amp;gt;year &amp;lt;&amp;lt; endl; 7 i-&amp;gt;print(); 8 i-&amp;gt;year=add(i-&amp;gt;year); 9 i-&amp;gt;print(); 10 say(); 11} 动态库 动态库生成</description>
     </item>
     
     <item>
@@ -28,9 +27,9 @@
       
       <guid>https://ao2233.xyz/posts/cmake%E6%8C%87%E5%8D%97/</guid>
       <description>CMake 基本结构
- 1# 设置cmake最低版本 2cmake_minimum_required(VERSION 3.5)3# 工程名称 4project (hello_headers)5# 设置变量或者别名 6set(SOURCE src)	# 引用方式 ${name} 7# 遍历文件 8file(GLOB LIB_FILE src/lib/*c)	# 将所有.c*的文件作为LIB_FILE 9file(GLOB_RECURSE src/lib/*c) # 在lib文件夹下递归寻找.c*文件作为LIB_FILE 10# 引入头文件库 11# 设置链接库 12# 设置生成文件 13# 设置编译FLAG  引入头文件库
- 1include_directories(目录) # 为所有目标引入 2target_include_directories(目标名称 属性 目录) # 为特定目标引入 34# 1 在 add_excutable() 前引入 5# 2 在 add_excutable() 后引入  引入链接库
- 1# 如果不引入add_library() 那么在add_excutable()时 需要将用到的文件全部加入到其中 2add_executable(hello_headers src/main.cpp src/Hello.cpp)34# 创建链接库 5add_library(新建的链接库名字 动态or静态 包含的文件)6# 引入链接库 7target_link_libraries(目标 属性 库名)8link_libraries(属性 库名)910# 1 在 add_excutable() 前引入 11# 2 在 add_excutable() 后引入  设置生成文件</description>
+1# 设置cmake最低版本 2cmake_minimum_required(VERSION 3.5) 3# 工程名称 4project (hello_headers) 5# 设置变量或者别名 6set(SOURCE src)	# 引用方式 ${name} 7# 遍历文件 8file(GLOB LIB_FILE src/lib/*c)	# 将所有.c*的文件作为LIB_FILE 9file(GLOB_RECURSE src/lib/*c) # 在lib文件夹下递归寻找.c*文件作为LIB_FILE 10# 引入头文件库 11# 设置链接库 12# 设置生成文件 13# 设置编译FLAG 引入头文件库
+1include_directories(目录) # 为所有目标引入 2target_include_directories(目标名称 属性 目录) # 为特定目标引入 3 4# 1 在 add_excutable() 前引入 5# 2 在 add_excutable() 后引入 引入链接库
+1# 如果不引入add_library() 那么在add_excutable()时 需要将用到的文件全部加入到其中 2add_executable(hello_headers src/main.cpp src/Hello.cpp) 3 4# 创建链接库 5add_library(新建的链接库名字 动态or静态 包含的文件) 6# 引入链接库 7target_link_libraries(目标 属性 库名) 8link_libraries(属性 库名) 9 10# 1 在 add_excutable() 前引入 11# 2 在 add_excutable() 后引入 设置生成文件</description>
     </item>
     
   </channel>
